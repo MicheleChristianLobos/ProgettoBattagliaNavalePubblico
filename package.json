@@ -1,0 +1,23 @@
+{
+  "name": "battaglianavale",
+  "version": "1.0.0",
+  "description": "Battaglia navale con le Websocket in Node.JS",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MicheleChristianLobos/ProgettoBattagliaNavale.git"
+  },
+  "author": "Michele Christian Lobos, Nicola Schianchi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MicheleChristianLobos/ProgettoBattagliaNavale/issues"
+  },
+  "homepage": "https://github.com/MicheleChristianLobos/ProgettoBattagliaNavale#readme"
+}
