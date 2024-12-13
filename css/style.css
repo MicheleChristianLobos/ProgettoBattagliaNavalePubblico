@@ -1,0 +1,11 @@
+table.tabellone {
+    width: fit-content;
+    height: fit-content;
+}
+
+img.nave {
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 64px;
+    max-height: 64px;
+}
