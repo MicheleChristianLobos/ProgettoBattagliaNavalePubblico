@@ -9,3 +9,7 @@ img.nave {
     max-width: 32px;
     max-height: 32px;
 }
+
+input.txtinput {
+    width: 30%;
+}
