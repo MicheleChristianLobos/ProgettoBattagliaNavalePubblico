@@ -5,4 +5,4 @@
 5) (PER CONOSCERE IL TUO INDIRIZZO IP) Vai nel terminale e digita IPCONFIG oppure IPCONFIG /all
 6) (SE HAI IL DUBBIO DI NON AVERE NODE) Digita "node -v" <- (SE NON FUNZIONA) Scaricati Node nel sito ufficiale (https://nodejs.org/en)
 7) (SE HAI NODE) Digita "node server.js"
-8) Accedi sul motore di ricerca e digita nella barra di inserimento URL l'indirizzo IP indicato sul terminale
+8) Accedi sul motore di ricerca e digita nella barra di inserimento URL l'indirizzo IP indicato sul terminale + La porta (3000): IndirizzoIP:3000
