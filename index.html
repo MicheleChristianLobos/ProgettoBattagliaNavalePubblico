@@ -43,11 +43,15 @@ Michele Christian Lobos x Nicola Schianchi - 5^C Inf Progetto TDP "Battaglia Nav
         {
             let username = "";
             username = document.getElementById("username").value;
-            console.log("username:  " + username);
+            console.log("Username:  " + username);
 
             if(username == "")
             {
                 alert("Inserisci un nome");
+            }
+            else
+            {
+                socket.emit("registrazione", username);
             }
         }
     </script>
