@@ -10,7 +10,7 @@ const port = 3000;
 let numGiocatori = 0
 
 const ERR404 = `<!doctype html>
-<html lang="it">
+<html lang="it" data-bs-theme="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,12 +18,14 @@ const ERR404 = `<!doctype html>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
-    <h1 class="h1 text-danger">Errore 404: file o directory non trovata.</h1>
+    <center>
+      <h1 class="h1 text-danger">Errore 404: file o directory non trovata.</h1>
+    </center>
   </body>
 </html>`;
 
 const ERR500 = `<!doctype html>
-<html lang="it">
+<html lang="it" data-bs-theme="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,7 +33,9 @@ const ERR500 = `<!doctype html>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
-    <h1 class="h1 text-danger">Errore 500: errore interno del server.</h1>
+    <center>
+      <h1 class="h1 text-danger">Errore 500: errore interno del server.</h1>
+    </center>
   </body>
 </html>`;
 
@@ -88,6 +92,8 @@ function requestHandler(req, res) {
       filePath = "./js/xAnime.js";
       mimeType = "text/javascript";
       break;
+    case "/send_username":
+      break;
     default:
       filePath = "";
       mimeType = "text/html";
@@ -120,6 +126,9 @@ function requestHandler(req, res) {
         res.end();
       });
     }
+  } else { // Risorsa non trovata
+    res.writeHead(404, { 'Content-Type': mimeType });
+    res.end(ERR404);
   }
 }
 
