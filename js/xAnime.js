@@ -21,7 +21,7 @@ anime
     easing: 'easeInOutExpo'
 });
 
-//Ore
+//Contatore
 anime
 ({
   targets: ".ore",
@@ -48,6 +48,7 @@ anime
   easing: 'easeInOutExpo'
 })
 
+//Per la forma sotto la descrizione
 anime
 ({
   targets: ".quadratoDescrizione",
@@ -57,6 +58,7 @@ anime
   easing: 'easeInOutExpo'
 })
 
+//Per l'animazione della formazione della tabella amica
 anime
 ({
   targets: '.casellaNave',
@@ -64,6 +66,7 @@ anime
   delay: anime.stagger(100, {start: 500}) // delay starts at 500ms then increase by 100ms for each elements.
 });
 
+//Per l'animazione della formazione della tabella nemica
 anime
 ({
   targets: '.casellaNaveNemica',
@@ -71,6 +74,7 @@ anime
   delay: anime.stagger(100, {start: 500}) // delay starts at 500ms then increase by 100ms for each elements.
 });
 
+//Per l'animazione della formazione del campo di battaglia
 anime
 ({
   targets: ".campoDiBattaglia",
