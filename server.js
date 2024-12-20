@@ -74,6 +74,18 @@ function requestHandler(req, res) {
       filePath = "./assets/img/torpediniere.png";
       mimeType = "image/png";
       break;
+    case "/x_animejs_css":
+      filePath = "./css/xAnime.css";
+      mimeType = "text/css";
+      break;
+    case "/animejs_min":
+      filePath = "./animeJS/anime.min.js";
+      mimeType = "text/javascript";
+      break;
+    case "/x_animejs":
+      filePath = "./js/xAnime.js";
+      mimeType = "text/javascript";
+      break;
     default:
       filePath = "";
       mimeType = "text/html";
