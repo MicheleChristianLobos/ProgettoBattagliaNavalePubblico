@@ -93,8 +93,6 @@ function requestHandler(req, res) {
       filePath = "./js/xAnime.js";
       mimeType = "text/javascript";
       break;
-    case "/send_username":
-      break;
     default:
       filePath = "";
       mimeType = "text/html";
@@ -140,8 +138,8 @@ server.listen(port, hostname, function () {
 
 const io = require("socket.io")(server, {
   cors: {
-      origin: "http://127.0.0.1:3000",
-      methods: ["GET", "POST"]
+    origin: "http://127.0.0.1:3000",
+    methods: ["GET", "POST"]
   }
 });
 
@@ -173,14 +171,14 @@ io.sockets.on('connection', function (socket) {
   });
 
   socket.on('disconnect', function () {
-      numGiocatori--;
-      console.log('Clienti connessi:', numGiocatori);
-      socket.broadcast.emit('stato', numGiocatori);
+    numGiocatori--;
+    console.log('Clienti connessi:', numGiocatori);
+    socket.broadcast.emit('stato', numGiocatori);
 
       giocatori = giocatori.filter(user => user.id !== socket.id);
       io.emit("aggiorna_lista", giocatori);
 
-      console.log('utente: disconnesso ' + socket.username);
+    console.log('utente: disconnesso ' + socket.username);
   });
 
 });
