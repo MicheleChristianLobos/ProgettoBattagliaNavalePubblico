@@ -82,3 +82,11 @@ anime
   duration: 1000,
   delay: anime.stagger(100, {start: 500})
 })
+
+anime
+({
+  targets: ".selezioneNavi",
+  delay: 1500,
+  opacity: [0, 1],
+  duration: 10000,
+})
