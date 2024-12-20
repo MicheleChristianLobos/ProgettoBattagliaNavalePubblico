@@ -33,24 +33,21 @@ Michele Christian Lobos x Nicola Schianchi - 5^C Inf Progetto TDP "Battaglia Nav
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-        
+
     <!-- GESTIONE DI COMUNICAZIONE CON IL SERVER -->
     <!--<script src="/socket.io/socket.io.js"></script>-->
     <script>
         const socket = io.connect("http://127.0.0.1:3000");
-        
-        function setUserName()
-        {
+
+        function setUserName() {
             let username = "";
             username = document.getElementById("username").value;
             console.log("Username:  " + username);
 
-            if(username == "")
-            {
+            if (username == "") {
                 alert("Inserisci un nome");
             }
-            else
-            {
+            else {
                 socket.emit("registrazione", username);
             }
         }

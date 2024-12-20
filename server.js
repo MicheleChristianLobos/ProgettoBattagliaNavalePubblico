@@ -107,44 +107,6 @@ function requestHandler(req, res) {
       });
     }
   }
-  /* let path = '';
-  let mimeType = '';
-
-  switch (req.url) {
-      case '/':
-          path = './index.html';
-          mimeType = 'text/html';
-          break;
-      case '/css':
-          path = './css/style.css';
-          mimeType = 'text/css';
-      default:
-          break;
-  }
-
-  if (path != '') {
-      const stream = fs.createReadStream(path, 'utf-8');
-      stream.on("data", function (chunk) {
-          res.writeHead(200, { 'Content-Type': mimeType });
-          if (path === "/") {
-            res.write(chunk, "utf-8");
-          } else {
-            stream.pipe(res);
-          }
-      });
-      stream.on("error", function (err) {
-          if (err.code === 'ENOENT') {
-              res.writeHead(404, { 'Content-Type': 'text/html' });
-              res.end(err404);
-          } else {
-              res.writeHead(500, { 'Content-Type': 'text/html' });
-              res.end(err500);
-          }
-      });
-      stream.on("end", function() {
-          res.end();
-      });
-  } */
 }
 
 const server = http.createServer(requestHandler);
