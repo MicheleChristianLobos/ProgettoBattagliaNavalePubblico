@@ -40,6 +40,15 @@ anime
 
 anime
 ({
+  targets: ".quadratoDescrizione",
+  translateX: [10000, -100],
+  delay: anime.stagger(0, {start: 50}),
+  duration: 1000,
+  easing: 'easeInOutExpo'
+})
+
+anime
+({
   targets: '.casellaNave',
   translateX: [-1000, 0],
   delay: anime.stagger(100, {start: 500}) // delay starts at 500ms then increase by 100ms for each elements.
