@@ -48,7 +48,7 @@ anime
 anime
 ({
   targets: '.casellaNaveNemica',
-  translateX: [-1000, 0],
+  translateX: [-1500, 0],
   delay: anime.stagger(100, {start: 500}) // delay starts at 500ms then increase by 100ms for each elements.
 });
 
