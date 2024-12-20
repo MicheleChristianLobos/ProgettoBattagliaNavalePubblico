@@ -62,5 +62,6 @@ button.square {
     border: 2px solid rgb(49, 111, 244);
     background-color: rgba(49, 111, 244, 10%);
     position: absolute;
+    z-index: 10;
     pointer-events: none; /* Evita che il riquadro interferisca con il mouse */
 }
