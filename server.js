@@ -92,8 +92,6 @@ function requestHandler(req, res) {
       filePath = "./js/xAnime.js";
       mimeType = "text/javascript";
       break;
-    case "/send_username":
-      break;
     default:
       filePath = "";
       mimeType = "text/html";
@@ -139,8 +137,8 @@ server.listen(port, hostname, function () {
 
 const io = require("socket.io")(server, {
   cors: {
-      origin: "http://127.0.0.1:3000",
-      methods: ["GET", "POST"]
+    origin: "http://127.0.0.1:3000",
+    methods: ["GET", "POST"]
   }
 });
 
@@ -154,38 +152,38 @@ io.sockets.on('connection', function (socket) {
   console.log('Clienti connessi:', numGiocatori);
 
   socket.on("registrazione", function (data) {
-      let userExists = users.some(user => user.name === data);
+    let userExists = users.some(user => user.name === data);
 
-      if (userExists) {
-          socket.emit("errore", "Il nome utente è già in uso. Scegli un altro.");
-      } else {
-          users.push({ name: data, id: socket.id });
-          console.log("Utente aggiunto:", data);
-          socket.emit("aggiunta_completata");
-      }
+    if (userExists) {
+      socket.emit("errore", "Il nome utente è già in uso. Scegli un altro.");
+    } else {
+      users.push({ name: data, id: socket.id });
+      console.log("Utente aggiunto:", data);
+      socket.emit("aggiunta_completata");
+    }
   });
 
   socket.on("aggiorna_lista", function () {
-      io.emit("aggiorna_lista", users);
+    io.emit("aggiorna_lista", users);
   });
-  
+
   socket.on('messaggio_broadcast', function (data) {
-      console.log("client: " + data);
-      io.emit('messaggio_broadcast', data);
+    console.log("client: " + data);
+    io.emit('messaggio_broadcast', data);
   });
 
   socket.on('disconnect', function () {
-      numGiocatori--;
-      console.log('Clienti connessi:', numGiocatori);
-      socket.broadcast.emit('stato', numGiocatori);
+    numGiocatori--;
+    console.log('Clienti connessi:', numGiocatori);
+    socket.broadcast.emit('stato', numGiocatori);
 
-      users = users.filter(user => user.id !== socket.id);
-      io.emit("aggiorna_lista", users);
+    users = users.filter(user => user.id !== socket.id);
+    io.emit("aggiorna_lista", users);
 
-      console.log('utente: disconnesso ' + socket.username);
+    console.log('utente: disconnesso ' + socket.username);
   });
 
   socket.on("messaggio_unicast", function (data) {
-      socket.to(data.id).emit("messaggio_unicast", data.messaggio)
+    socket.to(data.id).emit("messaggio_unicast", data.messaggio)
   });
 });
