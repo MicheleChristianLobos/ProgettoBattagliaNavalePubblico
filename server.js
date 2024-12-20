@@ -8,6 +8,7 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 let numGiocatori = 0
+let giocatori = [];
 
 const ERR404 = `<!doctype html>
 <html lang="it" data-bs-theme="dark">
@@ -145,31 +146,28 @@ const io = require("socket.io")(server, {
 io.sockets.on('connection', function (socket) {
   socket.username = socket.id;
   console.log('cliente: connesso ' + socket.id);
-  socket.emit('connesso', ip + " " + "porta:" + " " + port);
+  socket.emit('connesso', hostname + " " + "porta:" + " " + port);
   numGiocatori++;
   socket.broadcast.emit('stato', numGiocatori);
   socket.emit('stato', numGiocatori);
   console.log('Clienti connessi:', numGiocatori);
 
   socket.on("registrazione", function (data) {
-    let userExists = users.some(user => user.name === data);
+      let userExists = giocatori.some(user => user.name === data);
 
-    if (userExists) {
-      socket.emit("errore", "Il nome utente è già in uso. Scegli un altro.");
-    } else {
-      users.push({ name: data, id: socket.id });
-      console.log("Utente aggiunto:", data);
-      socket.emit("aggiunta_completata");
-    }
+      console.log("ciao");
+
+      if (userExists) {
+          socket.emit("errore", "Il nome utente è già in uso. Scegli un altro.");
+      } else {
+          giocatori.push({ name: data, id: socket.id });
+          console.log("Utente aggiunto:", data);
+          //socket.emit("aggiunta_completata");
+      }
   });
 
   socket.on("aggiorna_lista", function () {
-    io.emit("aggiorna_lista", users);
-  });
-
-  socket.on('messaggio_broadcast', function (data) {
-    console.log("client: " + data);
-    io.emit('messaggio_broadcast', data);
+      io.emit("aggiorna_lista", giocatori);
   });
 
   socket.on('disconnect', function () {
@@ -177,13 +175,10 @@ io.sockets.on('connection', function (socket) {
     console.log('Clienti connessi:', numGiocatori);
     socket.broadcast.emit('stato', numGiocatori);
 
-    users = users.filter(user => user.id !== socket.id);
-    io.emit("aggiorna_lista", users);
+      giocatori = giocatori.filter(user => user.id !== socket.id);
+      io.emit("aggiorna_lista", giocatori);
 
     console.log('utente: disconnesso ' + socket.username);
   });
 
-  socket.on("messaggio_unicast", function (data) {
-    socket.to(data.id).emit("messaggio_unicast", data.messaggio)
-  });
 });
