@@ -14,3 +14,13 @@
     background-color: slateblue;
     margin: 5px;
 }
+
+.visibile
+{
+    visibility: visible;
+}
+
+.invisibile
+{
+    visibility: hidden;
+}
