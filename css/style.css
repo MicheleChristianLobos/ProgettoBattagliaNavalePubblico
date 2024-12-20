@@ -13,3 +13,9 @@ img.nave {
 input.txtinput {
     width: 30%;
 }
+
+button.square {
+    width: 32px;
+    height: 32px;
+    margin: 0;
+}
