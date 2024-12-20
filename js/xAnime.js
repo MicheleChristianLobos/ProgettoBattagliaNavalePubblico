@@ -15,7 +15,7 @@ anime
 anime 
 ({
     targets: ".descrizione",
-    translateX: [1000, -300],
+    translateX: [1000, -250],
     delay: anime.stagger(0, {start: 50}),
     duration: 2000,
     easing: 'easeInOutExpo'
