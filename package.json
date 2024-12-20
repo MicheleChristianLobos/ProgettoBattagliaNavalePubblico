@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/MicheleChristianLobos/ProgettoBattagliaNavale/issues"
   },
-  "homepage": "https://github.com/MicheleChristianLobos/ProgettoBattagliaNavale#readme"
+  "homepage": "https://github.com/MicheleChristianLobos/ProgettoBattagliaNavale#readme",
+  "dependencies": {
+    "socket.io": "^4.8.1"
+  }
 }
