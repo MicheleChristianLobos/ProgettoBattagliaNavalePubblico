@@ -4,23 +4,23 @@ table.tabellone {
 }
 
 img.portaerei {
+    min-width: 164px;
+    min-height: 32px;
+    max-width: 164px;
+    max-height: 32px;
+}
+
+img.incrociatore {
     min-width: 128px;
     min-height: 32px;
     max-width: 128px;
     max-height: 32px;
 }
 
-img.incrociatore {
-    min-width: 96px;
-    min-height: 32px;
-    max-width: 96px;
-    max-height: 32px;
-}
-
 img.torpediniere {
-    min-width: 64px;
+    min-width: 76px;
     min-height: 32px;
-    max-width: 64px;
+    max-width: 76px;
     max-height: 32px;
 }
 
@@ -56,9 +56,9 @@ button.square {
 }
 
 #riquadroGuida {
-    visibility: visible;
-    width: 50px;
-    height: 50px;
+    visibility: hidden;
+    width: 32px;
+    height: 32px;
     border: 2px solid rgb(49, 111, 244);
     background-color: rgba(49, 111, 244, 10%);
     position: absolute;

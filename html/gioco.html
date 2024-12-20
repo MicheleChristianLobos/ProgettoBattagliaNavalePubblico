@@ -32,48 +32,68 @@
                     <div id="divPortaerei">
                         <p>
                             Portaerei (4 caselle)<br>
-                            <button class="btn btn-tertiary" id="portaerei"><img src="/portaerei" alt="Portaerei"
-                                    class="portaerei"></button>
+                            <button class="btn btn-tertiary horizontal" id="portaerei"><img src="/portaerei"
+                                    alt="Portaerei" class="portaerei"
+                                    onclick="setBoxSize(isHorizontal('portaerei'), '164px', '32px');"></button>
                         </p>
                     </div>
                     <div id="divIncrociatori">
                         <p>
                             Incrociatori (3 caselle)<br>
-                            <button class="btn btn-tertiary" id="incrociatore1"><img src="/incrociatore"
-                                    alt="Incrociatore1" class="incrociatore"></button><br>
-                            <button class="btn btn-tertiary" id="incrociatore2"><img src="/incrociatore"
-                                    alt="Incrociatore2" class="incrociatore"></button>
+                            <button class="btn btn-tertiary horizontal" id="incrociatore1"><img src="/incrociatore"
+                                    alt="Incrociatore1" class="incrociatore" onclick="setBoxSize(isHorizontal('incrociatore1'), '128px', '32px');"></button><br>
+                            <button class="btn btn-tertiary horizontal" id="incrociatore2"><img src="/incrociatore"
+                                    alt="Incrociatore2" class="incrociatore" onclick="setBoxSize(isHorizontal('incrociatore2'), '128px', '32px');"></button>
                         </p>
                     </div>
                     <div id="divTorpediniere">
                         <p>
                             Torpediniere (2 caselle)<br>
-                            <button class="btn btn-tertiary" id="torpediniere1"><img src="/torpediniere"
-                                    alt="Torpediniere1" class="torpediniere"></button>
-                            <button class="btn btn-tertiary" id="torpediniere2"><img src="/torpediniere"
-                                    alt="Torpediniere2" class="torpediniere"></button><br>
-                            <button class="btn btn-tertiary" id="torpediniere3"><img src="/torpediniere"
-                                    alt="Torpediniere3" class="torpediniere"></button>
+                            <button class="btn btn-tertiary horizontal" id="torpediniere1"><img src="/torpediniere"
+                                    alt="Torpediniere1" class="torpediniere" onclick="setBoxSize(isHorizontal('torpediniere1'), '76px', '32px');"></button>
+                            <button class="btn btn-tertiary horizontal" id="torpediniere2"><img src="/torpediniere"
+                                    alt="Torpediniere2" class="torpediniere" onclick="setBoxSize(isHorizontal('torpediniere2'), '76px', '32px');"></button><br>
+                            <button class="btn btn-tertiary horizontal" id="torpediniere3"><img src="/torpediniere"
+                                    alt="Torpediniere3" class="torpediniere" onclick="setBoxSize(isHorizontal('torpediniere3'), '76px', '32px');"></button>
                         </p>
                     </div>
                     <div id="divSommergibili">
                         <p>
                             Sommergibili (1 casella)<br>
-                            <button class="btn btn-tertiary" id="sommergibile1"><img src="/sommergibile"
-                                    alt="Sommergibile1" class="sommergibile"></button>
-                            <button class="btn btn-tertiary" id="sommergibile2"><img src="/sommergibile"
-                                    alt="Sommergibile2" class="sommergibile"></button><br>
-                            <button class="btn btn-tertiary" id="sommergibile3"><img src="/sommergibile"
-                                    alt="Sommergibile3" class="sommergibile"></button>
-                            <button class="btn btn-tertiary" id="sommergibile4"><img src="/sommergibile"
-                                    alt="Sommergibile4" class="sommergibile"></button>
+                            <button class="btn btn-tertiary horizontal" id="sommergibile1"><img src="/sommergibile"
+                                    alt="Sommergibile1" class="sommergibile" onclick="setBoxSize(isHorizontal('sommergibile1'), '32px', '32px');"></button>
+                            <button class="btn btn-tertiary horizontal" id="sommergibile2"><img src="/sommergibile"
+                                    alt="Sommergibile2" class="sommergibile" onclick="setBoxSize(isHorizontal('sommergibile2'), '32px', '32px');"></button><br>
+                            <button class="btn btn-tertiary horizontal" id="sommergibile3"><img src="/sommergibile"
+                                    alt="Sommergibile3" class="sommergibile" onclick="setBoxSize(isHorizontal('sommergibile3'), '32px', '32px');"></button>
+                            <button class="btn btn-tertiary horizontal" id="sommergibile4"><img src="/sommergibile"
+                                    alt="Sommergibile4" class="sommergibile" onclick="setBoxSize(isHorizontal('sommergibile4'), '32px', '32px');"></button>
                         </p>
                     </div>
+                    <button class="btn btn-primary" onclick='document.getElementById("riquadroGuida").style.visibility = "hidden"'>Nascondi casella inserimento</button>
                 </div>
                 <!-- Impostazione dimensioni riquadro in base all'orientamento e al tipo di nave scelta -->
                 <script>
-                    let orizzontale = document.getElementById('orizzontale').checked;
-                    
+                    function isHorizontal(id) {
+                        const btn = document.getElementById(id);
+                        if (btn.className.includes("horizontal")) {
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+
+                    function setBoxSize(isHorizontal, widthPx, heightPx) {
+                        const riquadroGuida = document.getElementById('riquadroGuida');
+                        if (isHorizontal) {
+                            riquadroGuida.style.width = widthPx;
+                            riquadroGuida.style.height = heightPx;
+                        } else {
+                            riquadroGuida.style.width = heightPx;
+                            riquadroGuida.style.height = widthPx;
+                        }
+                        riquadroGuida.style.visibility = "visible";
+                    }
                 </script>
                 <!-- Riquadro guida per l'inserimento delle navi -->
                 <div id="riquadroGuida"></div>
