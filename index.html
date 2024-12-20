@@ -20,7 +20,7 @@ Michele Christian Lobos x Nicola Schianchi - 5^C Inf Progetto TDP "Battaglia Nav
 
 <body>
     <div>
-        <p>Ore passate per creare questo server del *****: <span class="ore"></span></p>
+        <p>Ore passate per creare questo server del *****: <span class="ore" id = "counter"></span></p>
     </div>
     <center>
         <div class="container-xl" id="container">
@@ -30,10 +30,10 @@ Michele Christian Lobos x Nicola Schianchi - 5^C Inf Progetto TDP "Battaglia Nav
             <div class="quadratoDescrizione bg-danger">
                 <p class="p fs-4 descrizione">Benvenuto!<br>Per iniziare a giocare, inserisci il tuo nome utente.</p>
             </div>
-            <form action="/send_username" method="post">
+            <form onsubmit="setUserName();" method="post">
                 <input id="username" class="form-control txtinput" type="text" placeholder="Username"
                     aria-label="Username"><br>
-                <button id="btnSubmit" class="btn btn-success" type="submit" onclick="setUserName()">Prosegui</button>
+                <button id="btnSubmit" class="btn btn-success" type="submit">Prosegui</button>
             </form>
         </div><br>
         <footer>
@@ -61,6 +61,10 @@ Michele Christian Lobos x Nicola Schianchi - 5^C Inf Progetto TDP "Battaglia Nav
                 socket.emit("registrazione", username);
             }
         }
+
+        socket.on("stato", function (data) {
+            document.getElementById("counter").innerText = data;
+        });
     </script>
 </body>
 <!--AnimeJS-->
