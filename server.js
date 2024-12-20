@@ -33,7 +33,7 @@ const err500 = `<!doctype html>
 </html>`;
 
 function requestHandler(req, res) {
-  /* let path = '';
+  let path = '';
   let mimeType = '';
 
   switch (req.url) {
@@ -70,7 +70,7 @@ function requestHandler(req, res) {
       stream.on("end", function() {
           res.end();
       });
-  } */
+  } 
 }
 
 const server = http.createServer(requestHandler);
