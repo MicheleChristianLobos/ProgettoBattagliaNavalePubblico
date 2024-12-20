@@ -30,34 +30,6 @@
                             Orizzontale&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;
                             <input type="radio" name="orientamento" id="verticale" onclick="setVertical();"> Verticale
                         </p>
-                        <!-- Script orientamento navi -->
-                        <script>
-                            function setHorizontal() {
-                                document.getElementById('portaerei').className = "btn btn-tertiary horizontal";
-                                document.getElementById('incrociatore1').className = "btn btn-tertiary horizontal";
-                                document.getElementById('incrociatore2').className = "btn btn-tertiary horizontal";
-                                document.getElementById('torpediniere1').className = "btn btn-tertiary horizontal";
-                                document.getElementById('torpediniere2').className = "btn btn-tertiary horizontal";
-                                document.getElementById('torpediniere3').className = "btn btn-tertiary horizontal";
-                                document.getElementById('sommergibile1').className = "btn btn-tertiary horizontal";
-                                document.getElementById('sommergibile2').className = "btn btn-tertiary horizontal";
-                                document.getElementById('sommergibile3').className = "btn btn-tertiary horizontal";
-                                document.getElementById('sommergibile4').className = "btn btn-tertiary horizontal";
-                            }
-
-                            function setVertical() {
-                                document.getElementById('portaerei').className = "btn btn-tertiary vertical";
-                                document.getElementById('incrociatore1').className = "btn btn-tertiary vertical";
-                                document.getElementById('incrociatore2').className = "btn btn-tertiary vertical";
-                                document.getElementById('torpediniere1').className = "btn btn-tertiary vertical";
-                                document.getElementById('torpediniere2').className = "btn btn-tertiary vertical";
-                                document.getElementById('torpediniere3').className = "btn btn-tertiary vertical";
-                                document.getElementById('sommergibile1').className = "btn btn-tertiary vertical";
-                                document.getElementById('sommergibile2').className = "btn btn-tertiary vertical";
-                                document.getElementById('sommergibile3').className = "btn btn-tertiary vertical";
-                                document.getElementById('sommergibile4').className = "btn btn-tertiary vertical";
-                            }
-                        </script>
                         <!-- Bottoni navi -->
                         <div id="divPortaerei">
                             <p>
@@ -613,6 +585,35 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
+
+    <!-- Script orientamento navi e conferma disposizione -->
+    <script>
+        function setHorizontal() {
+            document.getElementById('portaerei').className = "btn btn-tertiary horizontal";
+            document.getElementById('incrociatore1').className = "btn btn-tertiary horizontal";
+            document.getElementById('incrociatore2').className = "btn btn-tertiary horizontal";
+            document.getElementById('torpediniere1').className = "btn btn-tertiary horizontal";
+            document.getElementById('torpediniere2').className = "btn btn-tertiary horizontal";
+            document.getElementById('torpediniere3').className = "btn btn-tertiary horizontal";
+            document.getElementById('sommergibile1').className = "btn btn-tertiary horizontal";
+            document.getElementById('sommergibile2').className = "btn btn-tertiary horizontal";
+            document.getElementById('sommergibile3').className = "btn btn-tertiary horizontal";
+            document.getElementById('sommergibile4').className = "btn btn-tertiary horizontal";
+        }
+
+        function setVertical() {
+            document.getElementById('portaerei').className = "btn btn-tertiary vertical";
+            document.getElementById('incrociatore1').className = "btn btn-tertiary vertical";
+            document.getElementById('incrociatore2').className = "btn btn-tertiary vertical";
+            document.getElementById('torpediniere1').className = "btn btn-tertiary vertical";
+            document.getElementById('torpediniere2').className = "btn btn-tertiary vertical";
+            document.getElementById('torpediniere3').className = "btn btn-tertiary vertical";
+            document.getElementById('sommergibile1').className = "btn btn-tertiary vertical";
+            document.getElementById('sommergibile2').className = "btn btn-tertiary vertical";
+            document.getElementById('sommergibile3').className = "btn btn-tertiary vertical";
+            document.getElementById('sommergibile4').className = "btn btn-tertiary vertical";
+        }
+    </script>
     <!-- GESTIONE COMUNICAZIONE CON IL SERVER -->
 
     <!--AnimeJS-->
