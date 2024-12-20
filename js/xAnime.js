@@ -1,11 +1,21 @@
 //File JS che gestisce le animazioni di animeJS - Miki
 var roundLogEl = document.querySelector('.round-log');
 
-//Prova animazzione
+//Titolo
 anime 
 ({
-    targets: ".anime",
-    translateX: [-1000, 0],
+    targets: ".titolo",
+    translateX: [-1000, 250],
+    delay: anime.stagger(0, {start: 50}),
+    duration: 2000,
+    easing: 'easeInOutExpo'
+});
+
+//Descrizione
+anime 
+({
+    targets: ".descrizione",
+    translateX: [1000, -300],
     delay: anime.stagger(0, {start: 50}),
     duration: 2000,
     easing: 'easeInOutExpo'
@@ -32,7 +42,7 @@ anime
 anime
 ({
   targets: ".quadratoTitolo",
-  translateX: [-10000, -500],
+  translateX: [-10000, -300],
   delay: anime.stagger(0, {start: 50}),
   duration: 1000,
   easing: 'easeInOutExpo'
@@ -41,7 +51,7 @@ anime
 anime
 ({
   targets: ".quadratoDescrizione",
-  translateX: [10000, -100],
+  translateX: [10000, 200],
   delay: anime.stagger(0, {start: 50}),
   duration: 1000,
   easing: 'easeInOutExpo'
