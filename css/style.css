@@ -46,5 +46,11 @@ input.txtinput {
 button.square {
     width: 32px;
     height: 32px;
+    cursor: crosshair;
     margin: 0;
+}
+
+.crosshair 
+{
+    cursor: crosshair;
 }

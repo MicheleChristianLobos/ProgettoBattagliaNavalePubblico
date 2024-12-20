@@ -1,17 +1,27 @@
 //File JS che gestisce le animazioni di animeJS - Miki
 var roundLogEl = document.querySelector('.round-log');
 
-//Prova animazzione
+//Titolo
 anime 
 ({
-    targets: ".anime",
-    translateX: [-1000, 0],
+    targets: ".titolo",
+    translateX: [-1000, 250],
     delay: anime.stagger(0, {start: 50}),
     duration: 2000,
     easing: 'easeInOutExpo'
 });
 
-//Ore
+//Descrizione
+anime 
+({
+    targets: ".descrizione",
+    translateX: [1000, -250],
+    delay: anime.stagger(0, {start: 50}),
+    duration: 2000,
+    easing: 'easeInOutExpo'
+});
+
+//Contatore
 anime
 ({
   targets: ".ore",
@@ -32,12 +42,23 @@ anime
 anime
 ({
   targets: ".quadratoTitolo",
-  translateX: [-10000, -500],
+  translateX: [-10000, -300],
   delay: anime.stagger(0, {start: 50}),
   duration: 1000,
   easing: 'easeInOutExpo'
 })
 
+//Per la forma sotto la descrizione
+anime
+({
+  targets: ".quadratoDescrizione",
+  translateX: [10000, 200],
+  delay: anime.stagger(0, {start: 50}),
+  duration: 1000,
+  easing: 'easeInOutExpo'
+})
+
+//Per l'animazione della formazione della tabella amica
 anime
 ({
   targets: '.casellaNave',
@@ -45,6 +66,7 @@ anime
   delay: anime.stagger(100, {start: 500}) // delay starts at 500ms then increase by 100ms for each elements.
 });
 
+//Per l'animazione della formazione della tabella nemica
 anime
 ({
   targets: '.casellaNaveNemica',
@@ -52,6 +74,7 @@ anime
   delay: anime.stagger(100, {start: 500}) // delay starts at 500ms then increase by 100ms for each elements.
 });
 
+//Per l'animazione della formazione del campo di battaglia
 anime
 ({
   targets: ".campoDiBattaglia",

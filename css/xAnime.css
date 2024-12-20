@@ -10,8 +10,13 @@
 .quadratoTitolo
 {
     height: 150px;
-    width: 1500px;
-    background-color: slateblue;
+    width: 1200px;
+    margin: 5px;
+}
+
+.quadratoDescrizione
+{
+    width: 1130px;
     margin: 5px;
 }
 
