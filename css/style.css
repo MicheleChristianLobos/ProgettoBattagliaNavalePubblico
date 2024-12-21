@@ -65,3 +65,13 @@ button.square {
     z-index: 10;
     pointer-events: none; /* Evita che il riquadro interferisca con il mouse */
 }
+
+@font-face {
+    font-family: koba;
+    src: url(Font\koba-italic.otf);
+  }
+
+@font-face {
+    font-family: my_impact;
+    src: url(Font\impacted.ttf);
+  }
