@@ -157,21 +157,21 @@ io.sockets.on('connection', function (socket) {
   console.log('Clienti connessi:', numGiocatori);
 
   socket.on("registrazione", function (data) {
-      let userExists = giocatori.some(user => user.name === data);
+    // Controllare se il nome utente è già registrato
+    let userExists = giocatori.some(user => user.name === data);
 
-      console.log("ciao");
+    console.log("ciao");
 
-      if (userExists) {
-          socket.emit("errore", "Il nome utente è già in uso. Scegli un altro.");
-      } else {
-          giocatori.push({ name: data, id: socket.id });
-          console.log("Utente aggiunto:", data);
-          //socket.emit("aggiunta_completata");
-      }
+    if (userExists) {
+      socket.emit("errore", "Il nome utente è già in uso: scegline un altro.");
+    } else {
+      giocatori.push({ name: data, id: socket.id });
+      console.log("Utente aggiunto:", data);
+    }
   });
 
   socket.on("aggiorna_lista", function () {
-      io.emit("aggiorna_lista", giocatori);
+    io.emit("aggiorna_lista", giocatori);
   });
 
   socket.on('disconnect', function () {
@@ -179,10 +179,9 @@ io.sockets.on('connection', function (socket) {
     console.log('Clienti connessi:', numGiocatori);
     socket.broadcast.emit('stato', numGiocatori);
 
-      giocatori = giocatori.filter(user => user.id !== socket.id);
-      io.emit("aggiorna_lista", giocatori);
+    giocatori = giocatori.filter(user => user.id !== socket.id);
+    io.emit("aggiorna_lista", giocatori);
 
     console.log('utente: disconnesso ' + socket.username);
   });
-
 });
