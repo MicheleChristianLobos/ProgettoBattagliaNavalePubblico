@@ -20,6 +20,12 @@
     margin: 5px;
 }
 
+.titolo
+{
+    font-family: my_impact;
+}
+
+
 .visibile
 {
     visibility: visible;
