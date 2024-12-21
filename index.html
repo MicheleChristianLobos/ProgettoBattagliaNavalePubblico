@@ -20,7 +20,7 @@ Michele Christian Lobos x Nicola Schianchi - 5^C Inf Progetto TDP "Battaglia Nav
 
 <body>
     <div>
-        <p>Ore passate per creare questo server del *****: <span class="ore" id = "counter"></span></p>
+        <p>Ore passate per creare questo progetto: <span class="ore" id = "counter"></span></p>
     </div>
     <center>
         <div class="container-xl" id="container">
@@ -55,7 +55,7 @@ Michele Christian Lobos x Nicola Schianchi - 5^C Inf Progetto TDP "Battaglia Nav
             console.log("Username:  " + username);
 
             if (username == "") {
-                alert("Inserisci un nome");
+                alert("Inserisci un nome utente");
             }
             else {
                 socket.emit("registrazione", username);
