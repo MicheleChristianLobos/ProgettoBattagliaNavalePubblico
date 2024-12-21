@@ -81,6 +81,10 @@ function requestHandler(req, res) {
       filePath = "./assets/img/torpediniere.png";
       mimeType = "image/png";
       break;
+    case "/formaTitolo":
+        filePath = "./assets/imgAnime/rettangoloPerTitolo.png";
+        mimeType = "image/png";
+      break;
     case "/x_animejs_css":
       filePath = "./css/xAnime.css";
       mimeType = "text/css";
@@ -188,7 +192,7 @@ io.sockets.on('connection', function (socket) {
     io.emit("aggiorna_lista", giocatori);
   });
 
-  socket.on('disconnect', function () {
+  socket.on('disconnect', function (reason) {
     numGiocatori--;
     console.log('Clienti connessi:', numGiocatori);
     socket.broadcast.emit('stato', numGiocatori);
@@ -196,6 +200,6 @@ io.sockets.on('connection', function (socket) {
     giocatori = giocatori.filter(user => user.id !== socket.id);
     io.emit("aggiorna_lista", giocatori);
 
-    console.log('utente: disconnesso ' + socket.username);
+    console.log('utente: disconnesso ' + socket.username + " per " + reason);
   });
 });

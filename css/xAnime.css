@@ -9,6 +9,9 @@
 
 .quadratoTitolo
 {
+    position: relative;
+    z-index: 0;
+    background-image:url("/formaTitolo");
     height: 150px;
     width: 1200px;
     margin: 5px;
@@ -22,6 +25,7 @@
 
 .titolo
 {
+    z-index: 1;
     font-family: Aalto;
     padding: 1%;
     font-size: 120px;
