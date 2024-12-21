@@ -160,8 +160,6 @@ io.sockets.on('connection', function (socket) {
     // Controllare se il nome utente è già registrato
     let userExists = giocatori.some(user => user.name === data);
 
-    console.log("ciao");
-
     if (userExists) {
       socket.emit("errore", "Il nome utente è già in uso: scegline un altro.");
     } else {
