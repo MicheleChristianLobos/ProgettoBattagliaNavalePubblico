@@ -22,9 +22,15 @@
 
 .titolo
 {
-    font-family: koba;
+    font-family: Aalto;
     padding: 1%;
     font-size: 120px;
+}
+
+.descrizione
+{
+    font-family: Aalto;
+    font-size: 100px;
 }
 
 

@@ -109,6 +109,10 @@ function requestHandler(req, res) {
       filePath = "./Font/Impacted.ttf";
       mimeType = "application/octet-stream";
       break;
+    case "/AaltoDisplayPersonalUse":
+      filePath = "./Font/Aalto-Display-Personal-use.otf";
+      mimeType = "application/octet-stream";
+      break;
     default:
       filePath = "";
       mimeType = "text/html";
