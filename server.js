@@ -159,7 +159,7 @@ io.sockets.on('connection', function (socket) {
     console.log("ciao");
 
     if (userExists) {
-      socket.emit("errore", "Il nome utente è già in uso. Scegli un altro.");
+      socket.emit("errore", "Il nome utente è già in uso: scegline un altro.");
     } else {
       giocatori.push({ name: data, id: socket.id });
       console.log("Utente aggiunto:", data);

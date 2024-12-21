@@ -20,7 +20,7 @@ Michele Christian Lobos x Nicola Schianchi - 5^C Inf Progetto TDP "Battaglia Nav
 
 <body>
     <div>
-        <p>Ore passate per creare questo progetto: <span class="ore" id = "counter"></span></p>
+        <p>Ore passate per creare questo progetto: <span class="ore" id="counter"></span></p>
     </div>
     <center>
         <div class="container-xl" id="container">
@@ -44,8 +44,8 @@ Michele Christian Lobos x Nicola Schianchi - 5^C Inf Progetto TDP "Battaglia Nav
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-
     <!-- GESTIONE COMUNICAZIONE CON IL SERVER -->
+    <script src="/socket.io/socket.io.js"></script>
     <script>
         const socket = io.connect("http://127.0.0.1:3000");
 
