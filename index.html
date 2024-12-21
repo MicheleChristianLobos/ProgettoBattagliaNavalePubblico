@@ -30,11 +30,19 @@ Michele Christian Lobos x Nicola Schianchi - 5^C Inf Progetto TDP "Battaglia Nav
             <div class="quadratoDescrizione bg-danger">
                 <p class="p fs-4 descrizione">Benvenuto!<br>Per iniziare a giocare, inserisci il tuo nome utente.</p>
             </div>
-            <form method="post">
+            <form method="post" id="formUserName">
                 <input id="username" class="form-control txtinput" type="text" placeholder="Username"
                     aria-label="Username"><br>
-                <button id="btnSubmit" class="btn btn-success" type="submit" onclick="setUserName();">Prosegui</button>
+                <button id="btnSubmit" class="btn btn-success" type="submit">Prosegui</button>
             </form>
+            <script>
+                document.getElementById('formUserName').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    if (setUserName()) {
+                        window.location.href = "/stanze";
+                    }
+                });
+            </script>
         </div><br>
         <footer>
             <h6 class="h6">Creato da Michele Christian Lobos e Nicola Schianchi - 5^C INF - 2024</h4>
@@ -56,9 +64,11 @@ Michele Christian Lobos x Nicola Schianchi - 5^C Inf Progetto TDP "Battaglia Nav
 
             if (username == "") {
                 alert("Inserisci un nome utente");
+                return false;
             }
             else {
                 socket.emit("registrazione", username);
+                return true;
             }
         }
 
