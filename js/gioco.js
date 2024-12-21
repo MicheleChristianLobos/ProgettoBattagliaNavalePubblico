@@ -35,7 +35,21 @@ for (var i = listaCelle.length / 20; i < listaCelle.length; i++) {
 console.log(tabelloneG1);
 
 function ctrlPos() {
-    
+}
+
+function controllaCelleAdiacenti(numero, orizzontale) {
+    if (orizzontale) {
+        // Orizzontale
+        try {
+            for (let i = 0; i < numero; i++) {
+
+            }
+        } catch (e) {
+            return false;
+        }
+    } else {
+        // Verticale
+    }
 }
 
 function getPosition(id) {
