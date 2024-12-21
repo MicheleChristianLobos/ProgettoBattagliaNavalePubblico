@@ -67,11 +67,21 @@ button.square {
 }
 
 @font-face {
+    font-family: kobaOutLineItalic;
+    src: url(/kobaOutLineItalic);
+}
+
+@font-face {
     font-family: koba;
-    src: url(Font\koba-italic.otf);
-  }
+    src: url(/koba);
+}
+
+@font-face {
+    font-family: koba;
+    src: url(/koba);
+}
 
 @font-face {
     font-family: my_impact;
-    src: url(Font\Impacted.ttf);
-  }
+    src: url(/myImpact);
+}

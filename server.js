@@ -97,6 +97,18 @@ function requestHandler(req, res) {
       filePath = "./js/gioco.js";
       mimeType = "text/javascript";
       break;
+    case "/kobaOutLineItalic":
+      filePath = "./Font/koba-outlineitalic.otf";
+      mimeType = "application/octet-stream";
+      break;
+    case "/koba":
+      filePath = "./Font/koba.otf";
+      mimeType = "application/octet-stream";
+      break;
+    case "/myImpact":
+      filePath = "./Font/Impacted.ttf";
+      mimeType = "application/octet-stream";
+      break;
     default:
       filePath = "";
       mimeType = "text/html";
@@ -107,7 +119,7 @@ function requestHandler(req, res) {
     const stream = fs.createReadStream(filePath);
     const ext = path.extname(filePath);
     // Per file binari (tipo le immagini)
-    if (ext.match(/\.png$/)) {
+    if (ext.match(/(\.png)||(\.otf)$/)) {
       stream.pipe(res);
     } else {
       // Per file di testo (tipo le pagine HTML)
