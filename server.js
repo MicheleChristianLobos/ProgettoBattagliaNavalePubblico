@@ -93,6 +93,10 @@ function requestHandler(req, res) {
       filePath = "./js/xAnime.js";
       mimeType = "text/javascript";
       break;
+    case "/giocojs":
+      filePath = "./js/gioco.js";
+      mimeType = "text/javascript";
+      break;
     default:
       filePath = "";
       mimeType = "text/html";
