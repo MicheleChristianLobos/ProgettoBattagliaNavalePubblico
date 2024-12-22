@@ -5,15 +5,8 @@ const fs = require('fs');
 const path = require('path');
 const express = require("express")  
 const app = express();  //Per manipolare il comportamento dell'applicazione
-const sessione = require("express-session");
-
-//Come si comporta l'applicazione per le sessioni
-app.use(sessione({
-  resave: false,            //Permette di salvare la sessione solo quando viene modificata durante le richieste del client (con false)
-  saveUninitialized: true,  //Permette di salvare la sessione quando viene aggiunta (uninitialized) (con true)
-  secret: "forsestocapendocosastofacendo"
-}));
-
+//MiddleWare per le sessioni (MiddleWare = interfaccia tra applicazione e livelli di più sottostanti (SO, ecc.))
+const sessione = require("express-session");  
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -178,14 +171,42 @@ const io = require("socket.io")(server, {
   }
 });
 
+//Per le sessioni -------------------------------------------------------------------------------------------------------------------------
+let middleWareSession = sessione ({
+  resave: false,            //Permette di salvare la sessione solo quando viene modificata durante le richieste del client (con false)
+  saveUninitialized: true,  //Permette di salvare la sessione quando viene aggiunta (uninitialized) (con true)
+  secret: "forsestocapendocosastofacendo",
+  cookie: {maxAge: 60000, secure: false}   //secure: false perchè si sta usando HTTP (true se HTTPS) e il maxAge è di 1 minuto (60000 ms)
+})
+
+//Come si comporta l'applicazione per le sessioni
+app.use(middleWareSession);
+
+io.use((socket, next) => {
+  middleWareSession(socket.request, {}, next);
+});
+
+app.use((req, res) => {
+    console.log(req.session.views);
+})
+//-------------------------------------------------------------------------------------------------------------------------------------------
+
 io.sockets.on('connection', function (socket) {
-  socket.username = socket.id;
+
+  const session = socket.request.session;
+
+  /* Differenza tra socket.id e session.id:
+  Il socket.id viene modificato per ogni connessione mentre il session.id è persistente
+  (se chiudi il browser, vieni riconosciuto fino a un tot di tempo (maxAge del cookie))
+  */
+  socket.username = socket.id;  
   console.log('cliente: connesso ' + socket.id);
   socket.emit('connesso', hostname + " " + "porta:" + " " + port);
   numGiocatori++;
   socket.broadcast.emit('stato', numGiocatori);
   socket.emit('stato', numGiocatori);
   console.log('Clienti connessi:', numGiocatori);
+  console.log("Session-ID: " + session.id);  //Stampa il cookie di sessione con tutti i suoi parametri
 
   socket.on("registrazione", function (data) {
     // Controllare se il nome utente è già registrato
