@@ -7,9 +7,10 @@ const express = require("express")
 const app = express();  //Per manipolare il comportamento dell'applicazione
 //MiddleWare per le sessioni (MiddleWare = interfaccia tra applicazione e livelli di più sottostanti (SO, ecc.))
 const sessione = require("express-session");  
-const db = require("memorystore")
+//Memorystore è usato per poter salvare le sessioni degli utenti (viene gestito nell' app.use() dove vengono gestite anche le sessioni)
+const MemoryStore = require("memorystore")(sessione) //C'è (sessione) perché è una funzione (come se facessi db((sessione)) ma sulla dichiarazione)
 //const { escape } = require('querystring');
-
+let db = new MemoryStore({ checkPeriod: 3600000})  //Viene resettato ogni ora (3600000 ms)
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -175,11 +176,14 @@ const io = require("socket.io")(server, {
 });
 
 //Per le sessioni -------------------------------------------------------------------------------------------------------------------------
+
+
 let middleWareSession = sessione ({
   resave: false,            //Permette di salvare la sessione solo quando viene modificata durante le richieste del client (con false)
   saveUninitialized: true,  //Permette di salvare la sessione quando viene aggiunta (uninitialized) (con true)
   secret: "forsestocapendocosastofacendo",
-  cookie: {maxAge: 60000, secure: false}   //secure: false perchè si sta usando HTTP (true se HTTPS) e il maxAge è di 1 minuto (60000 ms)
+  cookie: {maxAge: 60000, secure: false},   //secure: false perchè si sta usando HTTP (true se HTTPS) e il maxAge è di 1 minuto (60000 ms)
+  store: db
 })
 
 //Come si comporta l'applicazione per le sessioni
@@ -225,7 +229,20 @@ io.sockets.on('connection', function (socket) {
       else
         console.log("Hai visitato questo sito " + session.views + " volta");
 
+    }
 
+    if (session && session.username) {
+      socket.username = session.username;
+
+      // Riassocia l'ID del socket
+      giocatori = giocatori.map(user => {
+        if (user.name === session.username) {
+          user.id = socket.id;
+        }
+        return user;
+      });
+
+      console.log(`Utente riconnesso: ${session.username}`);
     }
 
 
@@ -239,6 +256,10 @@ io.sockets.on('connection', function (socket) {
     } else {
       giocatori.push({ name: data, id: socket.id });
       console.log("Utente aggiunto:", data);
+      
+      session.username = data;
+      session.save();
+
     }
   });
 
@@ -247,13 +268,27 @@ io.sockets.on('connection', function (socket) {
   });
 
   socket.on('disconnect', function (reason) {
-    numGiocatori--;
+    /*numGiocatori--;
     console.log('Clienti connessi:', numGiocatori);
     socket.broadcast.emit('stato', numGiocatori);
 
     giocatori = giocatori.filter(user => user.id !== socket.id);
     io.emit("aggiorna_lista", giocatori);
 
-    console.log('utente: disconnesso ' + socket.username + " per " + reason);
+    console.log('utente: disconnesso ' + socket.username + " per " + reason);*/
+    const session = socket.request.session;
+
+    if (session && session.username) {
+      console.log(`Utente disconnesso, ma con sessione attiva: ${session.username}`);
+      // Non rimuovere l'utente, ma aggiorna solo lo stato
+      giocatori = giocatori.map(user => {
+        if (user.name === session.username) {
+          user.id = null; // Segna l'utente come "disconnesso" senza eliminarlo
+        }
+        return user;
+      });
+    } else {
+      console.log(`Utente anonimo disconnesso.`);
+    }
   });
 });
