@@ -7,6 +7,9 @@ const express = require("express")
 const app = express();  //Per manipolare il comportamento dell'applicazione
 //MiddleWare per le sessioni (MiddleWare = interfaccia tra applicazione e livelli di più sottostanti (SO, ecc.))
 const sessione = require("express-session");  
+const db = require("memorystore")
+//const { escape } = require('querystring');
+
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -182,13 +185,17 @@ let middleWareSession = sessione ({
 //Come si comporta l'applicazione per le sessioni
 app.use(middleWareSession);
 
+//Permetto la condivisione delle sessioni con i socket (come si vedrà di seguito di fatti si userà "socket.request.session")
 io.use((socket, next) => {
   middleWareSession(socket.request, {}, next);
 });
 
-app.use((req, res) => {
+
+/*
+app.use("/", (req, res) => {
+  req.session.views++;
     console.log(req.session.views);
-})
+})*/
 //-------------------------------------------------------------------------------------------------------------------------------------------
 
 io.sockets.on('connection', function (socket) {
@@ -207,6 +214,21 @@ io.sockets.on('connection', function (socket) {
   socket.emit('stato', numGiocatori);
   console.log('Clienti connessi:', numGiocatori);
   console.log("Session-ID: " + session.id);  //Stampa il cookie di sessione con tutti i suoi parametri
+
+  if(session) //Se la sessione non è NULL
+    {
+      session.views = (session.views || 0) + 1;
+      session.save()
+
+      if(session.views != 1)
+        console.log("Hai visitato questo sito " + session.views + " volte");
+      else
+        console.log("Hai visitato questo sito " + session.views + " volta");
+
+
+    }
+
+
 
   socket.on("registrazione", function (data) {
     // Controllare se il nome utente è già registrato
