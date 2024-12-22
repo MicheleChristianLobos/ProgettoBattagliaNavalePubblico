@@ -3,8 +3,17 @@ Michele Christian Lobos x Nicola Schianchi - 5^C Inf Progetto TDP "Battaglia Nav
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const applicazione = require("express")
+const express = require("express")  
+const app = express();  //Per manipolare il comportamento dell'applicazione
 const sessione = require("express-session");
+
+//Come si comporta l'applicazione per le sessioni
+app.use(sessione({
+  resave: false,            //Permette di salvare la sessione solo quando viene modificata durante le richieste del client (con false)
+  saveUninitialized: true,  //Permette di salvare la sessione quando viene aggiunta (uninitialized) (con true)
+  secret: "forsestocapendocosastofacendo"
+}));
+
 
 const hostname = '127.0.0.1';
 const port = 3000;
