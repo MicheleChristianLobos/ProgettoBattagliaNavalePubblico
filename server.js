@@ -3,6 +3,7 @@ Michele Christian Lobos x Nicola Schianchi - 5^C Inf Progetto TDP "Battaglia Nav
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const cookie = require("cookie-parser");
 
 const hostname = '127.0.0.1';
 const port = 3000;

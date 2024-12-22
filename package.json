@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/MicheleChristianLobos/ProgettoBattagliaNavale#readme",
   "dependencies": {
+    "express-session": "^1.18.1",
     "socket.io": "^4.8.1"
   }
 }
