@@ -93,6 +93,10 @@ function requestHandler(req, res) {
         filePath = "./assets/imgAnime/rettangoloPerTitolo.png";
         mimeType = "image/png";
       break;
+    case "/formaDescrizione":
+        filePath = "./assets/imgAnime/formaDescrizione.png";
+        mimeType = "image/png";
+      break;
     case "/x_animejs_css":
       filePath = "./css/xAnime.css";
       mimeType = "text/css";

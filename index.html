@@ -1,7 +1,7 @@
 <!-- Client (Index)
 Michele Christian Lobos x Nicola Schianchi - 5^C Inf Progetto TDP "Battaglia Navale" -->
 <!DOCTYPE html>
-<html lang="it" data-bs-theme="dark">
+<html lang="it" data-bs-theme="dark" class="html-index">
 
 <head>
     <meta charset="UTF-8">
@@ -18,18 +18,41 @@ Michele Christian Lobos x Nicola Schianchi - 5^C Inf Progetto TDP "Battaglia Nav
     </style>
 </head>
 
-<body>
+<body class="body-index">
+
+    <div class="bg">
+        <div class="gestioneEsplosione">
+            <div class="razzo"></div>
+            <div class="esplosione-bg"></div>
+            <div class="esplosione-bg-urto1"></div>
+            <div class="esplosione-bg-urto2"></div>
+        </div>
+    </div>
+
     <div>
         <p>Ore passate a creare questo progetto: <span class="ore" id="counter"></span></p>
     </div>
     <center>
         <div class="container-xl" id="container">
-            <div class="quadratoTitolo "> <!--bg-primary-->
-                <h1 class="h1 titolo">Battaglia Navale</h1>
+            <div class="immagini-container">
+                <div class="quadratoTitolo text-center d-flex align-items-center justify-content-center">
+                    <h1 class="h1 titolo text-white">Battaglia Navale</h1>
+                </div>
+                <!--bg-primary-->
+                <!--<div class="quadratoTitolo "> 
+                    <h1 class="h1 titolo">Battaglia Navale</h1>
+                </div>-->
+
+                <div class="quadratoDescrizione text-center d-flex align-items-center justify-content-center" style="">
+                    <p class="p fs-4 descrizione">Benvenuto!<br>Per iniziare a giocare, inserisci il tuo nome utente.</p>
+                </div>
+                
+                <!-- bg-danger-->
+                <!--<div class="quadratoDescrizione bg-danger">
+                    <p class="p fs-4 descrizione invisibile">Benvenuto!<br>Per iniziare a giocare, inserisci il tuo nome utente.</p>
+                </div>-->
             </div>
-            <div class="quadratoDescrizione"> <!-- bg-danger-->
-                <p class="p fs-4 descrizione">Benvenuto!<br>Per iniziare a giocare, inserisci il tuo nome utente.</p>
-            </div>
+
             <form method="post" id="formUserName">
                 <input id="username" class="form-control txtinput" type="text" placeholder="Username"
                     aria-label="Username"><br>

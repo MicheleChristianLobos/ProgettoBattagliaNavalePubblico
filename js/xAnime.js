@@ -1,6 +1,46 @@
 //File JS che gestisce le animazioni di animeJS - Miki
 var roundLogEl = document.querySelector('.round-log');
 
+var gestoreEsplosione1 = anime.timeline({
+  targets: ".esplosione-bg",
+  easing: 'easeInOutQuad',
+  delay: 3600,
+  translateX: [1480, 1480],
+  translateY: [450, 450],
+  endDelay: 1000,
+  scale:10
+})
+.add({ targets: '.esplosione-bg', background: 'rgb(199, 52, 52)',  }, 0)
+
+var gestoreEsplosione2 = anime.timeline({
+  targets: ".esplosione-bg-urto1",
+  easing: 'easeInOutQuad',
+  delay: 3600,
+  translateX: [1480, 1480],
+  translateY: [450, 450],
+  endDelay: 1000,
+  scale:20
+})
+.add({ targets: '.esplosione-bg-urto1', background: 'rgba(246, 62, 0, 0.42)'}, 0)
+
+var gestoreEsplosione3 = anime.timeline({
+  targets: ".esplosione-bg-urto2",
+  easing: 'easeInOutQuad',
+  delay: 3600,
+  translateX: [1480, 1480],
+  translateY: [450, 450],
+  endDelay: 1000,
+  scale:30
+})
+.add({ targets: '.esplosione-bg-urto2', background: 'rgba(255, 132, 0, 0.46)'}, 0)
+
+var gestoreEsplosioneDefault = anime.timeline({
+  targets: ".gestioneEsplosione",
+  easing: 'easeInOutQuad',
+  delay: 4600,
+})
+.add({ targets: '.gestioneEsplosione', background: 'rgba(255, 132, 0, 0)'}, 0)
+
 //Titolo
 anime 
 ({
@@ -30,13 +70,25 @@ anime
   round: 10 // Will round the animated value to 1 decimal
 });
 
-//Per la tabella
+//Prova
 anime
 ({
   targets: '.tab',
   translateX: 270,
   delay: anime.stagger(100, {start: 500}) // delay starts at 500ms then increase by 100ms for each elements.
 });
+
+//Per il razzo nello sfondo
+anime
+({
+  targets: '.razzo',
+  easing: 'easeInOutQuad',
+  translateX: [-100, 1480],
+  translateY: 500,
+  delay: 1600,
+  duration: 2000
+});
+
 
 //Per la forma sotto il titolo
 anime
