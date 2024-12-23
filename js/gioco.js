@@ -24,6 +24,7 @@ for (var i = listaCelle.length / 20; i < listaCelle.length; i++) {
     var riga = [];
     for (var j = (i - 100) * 10; j < (i - 100) * 10 + 10; j++) {
         console.log("j: " + j);
+        // errore qua??
         listaCelle[j].addEventListener('click', function () {
             ctrlPos();
         });
@@ -35,20 +36,34 @@ for (var i = listaCelle.length / 20; i < listaCelle.length; i++) {
 console.log(tabelloneG1);
 
 function ctrlPos() {
+    alert('test')
 }
 
-function controllaCelleAdiacenti(numero, orizzontale) {
+function controllaCelleAdiacenti(numero, orizzontale, posIniziale) {
     if (orizzontale) {
         // Orizzontale
         try {
-            for (let i = 0; i < numero; i++) {
-
+            for (let j = posIniziale[1]; j < posIniziale[1] + numero; j++) {
+                if (tabelloneG1.posIniziale[0][j].childNodes.getFirst().src != "/casella_vuota") {
+                    return false;
+                }
             }
+            return true;
         } catch (e) {
             return false;
         }
     } else {
         // Verticale
+        try {
+            for (let j = posIniziale[0]; j < posIniziale[0] + numero; j++) {
+                if (tabelloneG1.posIniziale[1][j].childNodes.getFirst().src != "/casella_vuota") {
+                    return false;
+                }
+            }
+            return true;
+        } catch (e) {
+            return false;
+        }
     }
 }
 
