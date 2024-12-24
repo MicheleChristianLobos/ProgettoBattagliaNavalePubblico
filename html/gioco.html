@@ -83,14 +83,25 @@
                         }
                     }
 
-                    function setBoxSize(isHorizontal, widthPx, heightPx) {
+                    function isVisible(id) {
+                        const element = document.getElementById(id);
+                        if (element.style.visibility === "visible") {
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+
+                    function setBoxSize(horizontal, widthPx, heightPx) {
                         const riquadroGuida = document.getElementById('riquadroGuida');
-                        if (isHorizontal) {
+                        if (horizontal) {
                             riquadroGuida.style.width = widthPx;
                             riquadroGuida.style.height = heightPx;
+                            riquadroGuida.className = "horizontal";
                         } else {
                             riquadroGuida.style.width = heightPx;
                             riquadroGuida.style.height = widthPx;
+                            riquadroGuida.className = "vertical";
                         }
                         riquadroGuida.style.visibility = "visible";
                     }
