@@ -1,15 +1,15 @@
 //File JS che gestisce il gioco direttamente
 let listaCelle = document.getElementsByClassName("square");
-//console.log(listaCelle)
 
 let tabelloneG1 = {};
 
+let counter = 0;
+
 // Memorizzazione tabellone Giocatore 1
-for (var i = 0; i < listaCelle.length / 20; i++) {
-    var riga = [];
-    for (var j = i * 10; j < i * 10 + 10; j++) {
-        //console.log("j: " + j);
-        var counter = 1;
+for (let i = 0; i < listaCelle.length / 20; i++) {
+    let riga = [];
+    counter = 0;
+    for (let j = i * 10; j < i * 10 + 10; j++) {
         // Ascoltatore bottoni tabellone G1
         listaCelle[j].addEventListener('click', function () {
             let numCaselle = 0;
@@ -55,7 +55,7 @@ for (var i = 0; i < listaCelle.length / 20; i++) {
                             break;
                     }
                 }
-                if (controllaCelleAdiacenti(numCaselle, horizontal, getPosition(`c${i+1}-${counter}-g1`))) {
+                if (controllaCelleAdiacenti(numCaselle, horizontal, getPositionByID(`c${i + 1}-${++counter}-g1`))) {
                     alert("ok");
                 } else {
                     alert("no");
@@ -65,7 +65,6 @@ for (var i = 0; i < listaCelle.length / 20; i++) {
             }
         });
         riga.push(listaCelle[j]);
-        counter++;
     }
     tabelloneG1[i + 1] = riga;
 }
@@ -73,9 +72,9 @@ for (var i = 0; i < listaCelle.length / 20; i++) {
 let tabelloneG2 = {};
 
 // Memorizzazione tabellone Giocatore 2
-for (var i = listaCelle.length / 20; i < listaCelle.length; i++) {
-    var riga = [];
-    for (var j = (i - 100) * 10; j < (i - 100) * 10 + 10; j++) {
+for (let i = listaCelle.length / 20; i < listaCelle.length; i++) {
+    let riga = [];
+    for (let j = (i - 100) * 10; j < (i - 100) * 10 + 10; j++) {
         //console.log("j: " + j);
         // errore qua??
         /* listaCelle[j].addEventListener('click', function () {
@@ -86,18 +85,12 @@ for (var i = listaCelle.length / 20; i < listaCelle.length; i++) {
     tabelloneG2[i + 1] = riga;
 }
 
-//console.log(tabelloneG1);
-
-function ctrlPos() {
-    alert('test')
-}
-
 function controllaCelleAdiacenti(numero, orizzontale, posIniziale) {
     if (orizzontale) {
         // Orizzontale
         try {
-            for (let j = posIniziale[1]; j < posIniziale[1] + numero; j++) {
-                if (tabelloneG1.posIniziale[0][j].childNodes.getFirst().src != "/casella_vuota") {
+            for (let j = posIniziale[1] - 1; j < posIniziale[1] - 1 + numero; j++) {
+                if (!tabelloneG1[posIniziale[0]][j].firstChild.src.endsWith("/casella_vuota")) {
                     return false;
                 }
             }
@@ -108,8 +101,8 @@ function controllaCelleAdiacenti(numero, orizzontale, posIniziale) {
     } else {
         // Verticale
         try {
-            for (let j = posIniziale[0]; j < posIniziale[0] + numero; j++) {
-                if (tabelloneG1.posIniziale[1][j].childNodes.getFirst().src != "/casella_vuota") {
+            for (let j = posIniziale[0] - 1; j < posIniziale[0] - 1 + numero; j++) {
+                if (!tabelloneG1[j][posIniziale[1] - 1].firstChild.src.endsWith("/casella_vuota")) {
                     return false;
                 }
             }
@@ -120,7 +113,7 @@ function controllaCelleAdiacenti(numero, orizzontale, posIniziale) {
     }
 }
 
-function getPosition(id) {
+function getPositionByID(id) {
     let coordsFromId = id.replace("c", "").replace(/\-g\d$/, "").split("-");
     let position = [];
     coordsFromId.forEach(coord => {
