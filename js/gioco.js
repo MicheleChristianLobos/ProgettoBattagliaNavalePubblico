@@ -2,13 +2,12 @@
 let listaCelle = document.getElementsByClassName("square");
 
 let tabelloneG1 = {};
-
-let counter = 0;
+let riga = [];
 
 // Memorizzazione tabellone Giocatore 1
 for (let i = 0; i < listaCelle.length / 20; i++) {
-    let riga = [];
-    counter = 0;
+    riga = [];
+
     for (let j = i * 10; j < i * 10 + 10; j++) {
         // Ascoltatore bottoni tabellone G1
         listaCelle[j].addEventListener('click', function () {
@@ -55,7 +54,7 @@ for (let i = 0; i < listaCelle.length / 20; i++) {
                             break;
                     }
                 }
-                if (controllaCelleAdiacenti(numCaselle, horizontal, getPositionByID(`c${i + 1}-${++counter}-g1`))) {
+                if (controllaCelleAdiacenti(numCaselle, horizontal, getPositionByID(listaCelle[j].parentElement.id))) {
                     alert("ok");
                 } else {
                     alert("no");
@@ -101,7 +100,7 @@ function controllaCelleAdiacenti(numero, orizzontale, posIniziale) {
     } else {
         // Verticale
         try {
-            for (let j = posIniziale[0] - 1; j < posIniziale[0] - 1 + numero; j++) {
+            for (let j = posIniziale[0]; j < posIniziale[0] + numero; j++) {
                 if (!tabelloneG1[j][posIniziale[1] - 1].firstChild.src.endsWith("/casella_vuota")) {
                     return false;
                 }
