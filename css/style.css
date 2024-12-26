@@ -6,7 +6,6 @@
     margin: 0;
 }
 
-
 table.tabellone {
     width: fit-content;
     height: fit-content;
@@ -40,12 +39,17 @@ img.sommergibile {
     max-height: 32px;
 }
 
+img.cella {
+    margin-left: -200%;
+    margin-top: -100%;
+}
+
 button.horizontal {
     rotate: 0deg;
 }
 
 button.vertical {
-    rotate: -90deg;
+    rotate: 90deg;
 }
 
 input.txtinput {

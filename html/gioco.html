@@ -41,36 +41,47 @@
                         <p>
                             Incrociatori (3 caselle)<br>
                             <button class="btn btn-tertiary horizontal" id="incrociatore1"><img src="/incrociatore"
-                                    alt="Incrociatore1" class="incrociatore" onclick="setBoxSize(isHorizontal('incrociatore1'), '128px', '32px');"></button><br>
+                                    alt="Incrociatore1" class="incrociatore"
+                                    onclick="setBoxSize(isHorizontal('incrociatore1'), '128px', '32px');"></button><br>
                             <button class="btn btn-tertiary horizontal" id="incrociatore2"><img src="/incrociatore"
-                                    alt="Incrociatore2" class="incrociatore" onclick="setBoxSize(isHorizontal('incrociatore2'), '128px', '32px');"></button>
+                                    alt="Incrociatore2" class="incrociatore"
+                                    onclick="setBoxSize(isHorizontal('incrociatore2'), '128px', '32px');"></button>
                         </p>
                     </div>
                     <div id="divTorpediniere">
                         <p>
                             Torpediniere (2 caselle)<br>
                             <button class="btn btn-tertiary horizontal" id="torpediniere1"><img src="/torpediniere"
-                                    alt="Torpediniere1" class="torpediniere" onclick="setBoxSize(isHorizontal('torpediniere1'), '76px', '32px');"></button>
+                                    alt="Torpediniere1" class="torpediniere"
+                                    onclick="setBoxSize(isHorizontal('torpediniere1'), '76px', '32px');"></button>
                             <button class="btn btn-tertiary horizontal" id="torpediniere2"><img src="/torpediniere"
-                                    alt="Torpediniere2" class="torpediniere" onclick="setBoxSize(isHorizontal('torpediniere2'), '76px', '32px');"></button><br>
+                                    alt="Torpediniere2" class="torpediniere"
+                                    onclick="setBoxSize(isHorizontal('torpediniere2'), '76px', '32px');"></button><br>
                             <button class="btn btn-tertiary horizontal" id="torpediniere3"><img src="/torpediniere"
-                                    alt="Torpediniere3" class="torpediniere" onclick="setBoxSize(isHorizontal('torpediniere3'), '76px', '32px');"></button>
+                                    alt="Torpediniere3" class="torpediniere"
+                                    onclick="setBoxSize(isHorizontal('torpediniere3'), '76px', '32px');"></button>
                         </p>
                     </div>
                     <div id="divSommergibili">
                         <p>
                             Sommergibili (1 casella)<br>
                             <button class="btn btn-tertiary horizontal" id="sommergibile1"><img src="/sommergibile"
-                                    alt="Sommergibile1" class="sommergibile" onclick="setBoxSize(isHorizontal('sommergibile1'), '32px', '32px');"></button>
+                                    alt="Sommergibile1" class="sommergibile"
+                                    onclick="setBoxSize(isHorizontal('sommergibile1'), '32px', '32px');"></button>
                             <button class="btn btn-tertiary horizontal" id="sommergibile2"><img src="/sommergibile"
-                                    alt="Sommergibile2" class="sommergibile" onclick="setBoxSize(isHorizontal('sommergibile2'), '32px', '32px');"></button><br>
+                                    alt="Sommergibile2" class="sommergibile"
+                                    onclick="setBoxSize(isHorizontal('sommergibile2'), '32px', '32px');"></button><br>
                             <button class="btn btn-tertiary horizontal" id="sommergibile3"><img src="/sommergibile"
-                                    alt="Sommergibile3" class="sommergibile" onclick="setBoxSize(isHorizontal('sommergibile3'), '32px', '32px');"></button>
+                                    alt="Sommergibile3" class="sommergibile"
+                                    onclick="setBoxSize(isHorizontal('sommergibile3'), '32px', '32px');"></button>
                             <button class="btn btn-tertiary horizontal" id="sommergibile4"><img src="/sommergibile"
-                                    alt="Sommergibile4" class="sommergibile" onclick="setBoxSize(isHorizontal('sommergibile4'), '32px', '32px');"></button>
+                                    alt="Sommergibile4" class="sommergibile"
+                                    onclick="setBoxSize(isHorizontal('sommergibile4'), '32px', '32px');"></button>
                         </p>
                     </div>
-                    <button class="btn btn-primary" onclick='document.getElementById("riquadroGuida").style.visibility = "hidden"'>Nascondi casella inserimento</button>
+                    <button class="btn btn-primary"
+                        onclick='document.getElementById("riquadroGuida").style.visibility = "hidden"'>Nascondi casella
+                        inserimento</button>
                 </div>
                 <!-- Impostazione dimensioni riquadro in base all'orientamento e al tipo di nave scelta -->
                 <script>
@@ -120,7 +131,8 @@
                 <!-- Tabellone di gioco giocatore 1 (con navi posizionate) -->
                 <div class="container-md campoDiBattaglia crosshair">
                     <h2 class="h2">Il tuo tabellone</h2>
-                    <table class="table table-hover table-bordered border-primary text-center tabellone crosshair"
+                    <table
+                        class="table table-responsive table-hover table-bordered border-primary text-center tabellone crosshair"
                         id="tabelloneG1">
                         <thead>
                             <tr class="casellaNave">
@@ -140,233 +152,233 @@
                         <tbody>
                             <tr id="r1-g1" class="casellaNave">
                                 <th scope="row">1</th>
-                                <td id="c1-1-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c1-2-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c1-3-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c1-4-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c1-5-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c1-6-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c1-7-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c1-8-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c1-9-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c1-10-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
+                                <td id="c1-1-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c1-2-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c1-3-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c1-4-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c1-5-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c1-6-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c1-7-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c1-8-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c1-9-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c1-10-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
                             </tr>
                             <tr id="r2-g1" class="casellaNave">
                                 <th scope="row">2</th>
-                                <td id="c2-1-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c2-2-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c2-3-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c2-4-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c2-5-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c2-6-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c2-7-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c2-8-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c2-9-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c2-10-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
+                                <td id="c2-1-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c2-2-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c2-3-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c2-4-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c2-5-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c2-6-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c2-7-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c2-8-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c2-9-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c2-10-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
                             </tr>
                             <tr id="r3-g1" class="casellaNave">
                                 <th scope="row">3</th>
-                                <td id="c3-1-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c3-2-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c3-3-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c3-4-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c3-5-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c3-6-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c3-7-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c3-8-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c3-9-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c3-10-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
+                                <td id="c3-1-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c3-2-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c3-3-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c3-4-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c3-5-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c3-6-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c3-7-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c3-8-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c3-9-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c3-10-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
                             </tr>
                             <tr id="r4-g1" class="casellaNave">
                                 <th scope="row">4</th>
-                                <td id="c4-1-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c4-2-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c4-3-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c4-4-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c4-5-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c4-6-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c4-7-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c4-8-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c4-9-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c4-10-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
+                                <td id="c4-1-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c4-2-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c4-3-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c4-4-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c4-5-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c4-6-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c4-7-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c4-8-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c4-9-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c4-10-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
                             </tr>
                             <tr id="r5-g1" class="casellaNave">
                                 <th scope="row">5</th>
-                                <td id="c5-1-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c5-2-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c5-3-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c5-4-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c5-5-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c5-6-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c5-7-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c5-8-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c5-9-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c5-10-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
+                                <td id="c5-1-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c5-2-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c5-3-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c5-4-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c5-5-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c5-6-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c5-7-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c5-8-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c5-9-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c5-10-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
                             </tr>
                             <tr id="r6-g1" class="casellaNave">
                                 <th scope="row">6</th>
-                                <td id="c6-1-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c6-2-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c6-3-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c6-4-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c6-5-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c6-6-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c6-7-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c6-8-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c6-9-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c6-10-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
+                                <td id="c6-1-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c6-2-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c6-3-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c6-4-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c6-5-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c6-6-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c6-7-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c6-8-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c6-9-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c6-10-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
                             </tr>
                             <tr id="r7-g1" class="casellaNave">
                                 <th scope="row">7</th>
-                                <td id="c7-1-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c7-2-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c7-3-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c7-4-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c7-5-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c7-6-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c7-7-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c7-8-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c7-9-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c7-10-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
+                                <td id="c7-1-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c7-2-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c7-3-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c7-4-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c7-5-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c7-6-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c7-7-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c7-8-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c7-9-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c7-10-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
                             </tr>
                             <tr id="r8-g1" class="casellaNave">
                                 <th scope="row">8</th>
-                                <td id="c8-1-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c8-2-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c8-3-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c8-4-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c8-5-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c8-6-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c8-7-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c8-8-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c8-9-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c8-10-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
+                                <td id="c8-1-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c8-2-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c8-3-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c8-4-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c8-5-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c8-6-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c8-7-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c8-8-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c8-9-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c8-10-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
                             </tr>
                             <tr id="r9-g1" class="casellaNave">
                                 <th scope="row">9</th>
-                                <td id="c9-1-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c9-2-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c9-3-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c9-4-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c9-5-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c9-6-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c9-7-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c9-8-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c9-9-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c9-10-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
+                                <td id="c9-1-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c9-2-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c9-3-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c9-4-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c9-5-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c9-6-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c9-7-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c9-8-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c9-9-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c9-10-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
                             </tr>
                             <tr id="r10-g1" class="casellaNave">
                                 <th scope="row">10</th>
-                                <td id="c10-1-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c10-2-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c10-3-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c10-4-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c10-5-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c10-6-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c10-7-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c10-8-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c10-9-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c10-10-g1"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
+                                <td id="c10-1-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c10-2-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c10-3-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c10-4-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c10-5-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c10-6-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c10-7-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c10-8-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c10-9-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c10-10-g1"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -376,7 +388,8 @@
                 <div class="container-md campoDiBattaglia crosshair">
                     <!-- Tabellone di gioco giocatore 2 (per cercare di colpire le navi avversarie) -->
                     <h2 class="h2">Tabellone avversario</h2>
-                    <table class="table table-hover table-bordered border-danger text-center tabellone crosshair"
+                    <table
+                        class="table table-responsive table-hover table-bordered border-danger text-center tabellone crosshair"
                         id="tabelloneG2">
                         <thead>
                             <tr class="casellaNaveNemica">
@@ -396,233 +409,233 @@
                         <tbody>
                             <tr id="r1-g2" class="casellaNaveNemica">
                                 <th scope="row">1</th>
-                                <td id="c1-1-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c1-2-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c1-3-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c1-4-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c1-5-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c1-6-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c1-7-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c1-8-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c1-9-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c1-10-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
+                                <td id="c1-1-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c1-2-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c1-3-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c1-4-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c1-5-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c1-6-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c1-7-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c1-8-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c1-9-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c1-10-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
                             </tr>
                             <tr id="r2-g2" class="casellaNaveNemica">
                                 <th scope="row">2</th>
-                                <td id="c2-1-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c2-2-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c2-3-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c2-4-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c2-5-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c2-6-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c2-7-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c2-8-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c2-9-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c2-10-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
+                                <td id="c2-1-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c2-2-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c2-3-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c2-4-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c2-5-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c2-6-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c2-7-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c2-8-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c2-9-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c2-10-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
                             </tr>
                             <tr id="r3-g2" class="casellaNaveNemica">
                                 <th scope="row">3</th>
-                                <td id="c3-1-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c3-2-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c3-3-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c3-4-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c3-5-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c3-6-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c3-7-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c3-8-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c3-9-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c3-10-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
+                                <td id="c3-1-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c3-2-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c3-3-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c3-4-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c3-5-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c3-6-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c3-7-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c3-8-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c3-9-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c3-10-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
                             </tr>
                             <tr id="r4-g2" class="casellaNaveNemica">
                                 <th scope="row">4</th>
-                                <td id="c4-1-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c4-2-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c4-3-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c4-4-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c4-5-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c4-6-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c4-7-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c4-8-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c4-9-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c4-10-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
+                                <td id="c4-1-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c4-2-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c4-3-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c4-4-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c4-5-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c4-6-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c4-7-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c4-8-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c4-9-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c4-10-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
                             </tr>
                             <tr id="r5-g2" class="casellaNaveNemica">
                                 <th scope="row">5</th>
-                                <td id="c5-1-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c5-2-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c5-3-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c5-4-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c5-5-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c5-6-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c5-7-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c5-8-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c5-9-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c5-10-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
+                                <td id="c5-1-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c5-2-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c5-3-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c5-4-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c5-5-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c5-6-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c5-7-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c5-8-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c5-9-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c5-10-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
                             </tr>
                             <tr id="r6-g2" class="casellaNaveNemica">
                                 <th scope="row">6</th>
-                                <td id="c6-1-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c6-2-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c6-3-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c6-4-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c6-5-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c6-6-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c6-7-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c6-8-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c6-9-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c6-10-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
+                                <td id="c6-1-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c6-2-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c6-3-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c6-4-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c6-5-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c6-6-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c6-7-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c6-8-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c6-9-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c6-10-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
                             </tr>
                             <tr id="r7-g2" class="casellaNaveNemica">
                                 <th scope="row">7</th>
-                                <td id="c7-1-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c7-2-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c7-3-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c7-4-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c7-5-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c7-6-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c7-7-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c7-8-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c7-9-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c7-10-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
+                                <td id="c7-1-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c7-2-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c7-3-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c7-4-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c7-5-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c7-6-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c7-7-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c7-8-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c7-9-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c7-10-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
                             </tr>
                             <tr id="r8-g2" class="casellaNaveNemica">
                                 <th scope="row">8</th>
-                                <td id="c8-1-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c8-2-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c8-3-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c8-4-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c8-5-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c8-6-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c8-7-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c8-8-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c8-9-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c8-10-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
+                                <td id="c8-1-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c8-2-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c8-3-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c8-4-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c8-5-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c8-6-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c8-7-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c8-8-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c8-9-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c8-10-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
                             </tr>
                             <tr id="r9-g2" class="casellaNaveNemica">
                                 <th scope="row">9</th>
-                                <td id="c9-1-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c9-2-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c9-3-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c9-4-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c9-5-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c9-6-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c9-7-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c9-8-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c9-9-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c9-10-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
+                                <td id="c9-1-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c9-2-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c9-3-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c9-4-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c9-5-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c9-6-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c9-7-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c9-8-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c9-9-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c9-10-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
                             </tr>
                             <tr id="r10-g2" class="casellaNaveNemica">
                                 <th scope="row">10</th>
-                                <td id="c10-1-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c10-2-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c10-3-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c10-4-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c10-5-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c10-6-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c10-7-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c10-8-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c10-9-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
-                                <td id="c10-10-g2"><button class="btn btn-tertiary square"><img src="/casella_vuota"
-                                            class="nave" alt="Nave"></button></td>
+                                <td id="c10-1-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c10-2-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c10-3-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c10-4-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c10-5-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c10-6-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c10-7-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c10-8-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c10-9-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
+                                <td id="c10-10-g2"><button class="btn btn-tertiary square horizontal"><img
+                                            src="/casella_vuota" alt="Nave"></button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -633,7 +646,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Script orientamento navi e conferma disposizione -->
     <script>
