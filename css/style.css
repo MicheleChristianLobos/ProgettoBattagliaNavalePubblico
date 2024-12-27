@@ -40,8 +40,9 @@ img.sommergibile {
 }
 
 img.cella {
-    margin-left: -200%;
+    margin-left: -150%;
     margin-top: -100%;
+    opacity: 100%;
 }
 
 button.horizontal {
@@ -50,6 +51,18 @@ button.horizontal {
 
 button.vertical {
     rotate: 90deg;
+}
+
+button.insNavi:disabled, button.square:disabled {
+    border: 0;
+}
+
+button.insNavi:disabled {
+    opacity: .25;
+}
+
+button.square:disabled {
+    opacity: 1;
 }
 
 input.txtinput {
