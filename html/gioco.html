@@ -32,6 +32,7 @@
                     <div id="divPortaerei">
                         <p>
                             Portaerei (4 caselle)<br>
+                            Disponibili: <span id="numPortaerei" class="numSpan">1</span><br>
                             <button class="btn btn-tertiary horizontal insNavi" id="portaerei"><img src="/portaerei"
                                     alt="Portaerei" class="portaerei"
                                     onclick="setBoxSize(isHorizontal('portaerei'), '164px', '32px');"></button>
@@ -40,6 +41,7 @@
                     <div id="divIncrociatori">
                         <p>
                             Incrociatori (3 caselle)<br>
+                            Disponibili: <span id="numIncrociatori" class="numSpan">2</span><br>
                             <button class="btn btn-tertiary horizontal insNavi" id="incrociatore"><img
                                     src="/incrociatore" alt="Incrociatore" class="incrociatore"
                                     onclick="setBoxSize(isHorizontal('incrociatore'), '128px', '32px');"></button><br>
@@ -48,6 +50,7 @@
                     <div id="divTorpediniere">
                         <p>
                             Torpediniere (2 caselle)<br>
+                            Disponibili: <span id="numTorpedinieri" class="numSpan">3</span><br>
                             <button class="btn btn-tertiary horizontal insNavi" id="torpediniere"><img
                                     src="/torpediniere" alt="Torpediniere" class="torpediniere"
                                     onclick="setBoxSize(isHorizontal('torpediniere'), '76px', '32px');"></button>
@@ -56,6 +59,7 @@
                     <div id="divSommergibili">
                         <p>
                             Sommergibili (1 casella)<br>
+                            Disponibili: <span id="numSommergibili" class="numSpan">4</span><br>
                             <button class="btn btn-tertiary horizontal insNavi" id="sommergibile"><img
                                     src="/sommergibile" alt="Sommergibile" class="sommergibile"
                                     onclick="setBoxSize(isHorizontal('sommergibile'), '32px', '32px');"></button>
@@ -85,12 +89,12 @@
                         }
                     }
 
-                    function checkDisable(id) {
-                        document.getElementById(id).setAttribute("disabled", "true");
+                    function enable(id) {
+                        document.getElementById(id).removeAttribute("disabled");
                     }
 
-                    function enable(id) {
-                        document.getElementById(id).setAttribute("disabled", "false");
+                    function disable(id) {
+                        document.getElementById(id).setAttribute("disabled", "true");
                     }
 
                     function setBoxSize(horizontal, widthPx, heightPx) {
@@ -372,7 +376,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <button class="btn btn-success" type="submit" disabled>Conferma</button>
+                    <button class="btn btn-success" id="confermaTabellone" type="submit" disabled="true">Conferma</button>
                 </div>
 
                 <div class="container-md campoDiBattaglia crosshair">
@@ -657,8 +661,8 @@
     <!-- GESTIONE COMUNICAZIONE CON IL SERVER -->
 
     <!--AnimeJS-->
-    <script src="/animejs_min"></script>
-    <script src="/x_animejs"></script>
+    <!-- <script src="/animejs_min"></script>
+    <script src="/x_animejs"></script> -->
 
     <!--GiocoJS-->
     <script src="/giocojs"></script>

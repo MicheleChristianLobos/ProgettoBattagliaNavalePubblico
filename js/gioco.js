@@ -64,10 +64,27 @@ for (let i = 0; i < listaCelle.length / 20; i++) {
                     alert("ok");
                     if (posizionaNave(numCaselle, horizontal, getPositionByID(listaCelle[j].parentElement.id))) {
                         occupaCaselle(numCaselle, horizontal, getPositionByID(listaCelle[j].parentElement.id));
+                        switch (numCaselle) {
+                            case 4:
+                                updateNum("numPortaerei");
+                                break;
+                            case 3:
+                                updateNum("numIncrociatori");
+                                break;
+                            case 2:
+                                updateNum("numTorpedinieri");
+                                break;
+                            case 1:
+                                updateNum("numSommergibili");
+                                break;
+                            default:
+                                break;
+                        }
                     }
                 } else {
                     alert("no");
                 }
+                checkEnableConferma();
             } else {
                 return;
             }
@@ -224,8 +241,72 @@ function occupaCaselle(numCaselle, horizontal, posIniziale) {
                 }
             }
         }
-        // Controlla se va disabilitato il bottone d'inserimento della nave di un certo tipo (navi rimaste == 0)
-        checkDisable(tipoNave);
+    }
+}
+
+function updateNum(id) {
+    let span = document.getElementById(id);
+    switch (id) {
+        case "numPortaerei":
+            if (naviDisponibili.portaerei == 0) {
+                span.innerText = "0";
+                span.className = "numSpan text-danger";
+                let btn = document.getElementById("portaerei");
+                disable(btn.id);
+            } else {
+                span.innerText = `${naviDisponibili.portaerei}`;
+            }
+            break;
+        case "numIncrociatori":
+            if (naviDisponibili.incrociatori == 0) {
+                span.innerText = "0";
+                span.className = "numSpan text-danger";
+                let btn = document.getElementById("incrociatore");
+                disable(btn.id);
+            } else {
+                span.innerText = `${naviDisponibili.incrociatori}`;
+            }
+            break;
+        case "numTorpedinieri":
+            if (naviDisponibili.torpedinieri == 0) {
+                span.innerText = "0";
+                span.className = "numSpan text-danger";
+                let btn = document.getElementById("torpediniere");
+                disable(btn.id);
+            } else {
+                span.innerText = `${naviDisponibili.torpedinieri}`;
+            }
+            break;
+        case "numSommergibili":
+            if (naviDisponibili.sommergibili == 0) {
+                span.innerText = "0";
+                span.className = "numSpan text-danger";
+                let btn = document.getElementById("sommergibile");
+                disable(btn.id);
+            } else {
+                span.innerText = `${naviDisponibili.sommergibili}`;
+            }
+            break;
+        default:
+            break;
+    }
+}
+
+function checkEnableConferma() {
+    // Controllo navi ancora disponibili per abilitare o meno il bottone di conferma del tabellone
+    let abilitare = true;
+    for (var tipo in naviDisponibili) {
+        if (naviDisponibili[tipo] > 0) {
+            abilitare = false;
+            break;
+        }
+    }
+
+    let btnConferma = document.getElementById("confermaTabellone");
+    if (abilitare) {
+        btnConferma.removeAttribute("disabled");
+    } else {
+        btnConferma.setAttribute("disabled", "true");
     }
 }
 

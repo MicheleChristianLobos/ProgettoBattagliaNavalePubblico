@@ -91,6 +91,10 @@ button.square {
     pointer-events: none; /* Evita che il riquadro interferisca con il mouse */
 }
 
+span.numSpan {
+    font-weight: bold;
+}
+
 @font-face {
     font-family: kobaOutLineItalic;
     src: url(/kobaOutLineItalic);
