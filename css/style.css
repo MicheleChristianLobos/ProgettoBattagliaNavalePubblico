@@ -82,7 +82,6 @@ button.square {
 }
 
 #riquadroGuida {
-    visibility: hidden;
     width: 32px;
     height: 32px;
     border: 2px solid rgb(49, 111, 244);

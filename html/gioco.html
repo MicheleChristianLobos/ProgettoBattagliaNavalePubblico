@@ -34,53 +34,35 @@
                             Portaerei (4 caselle)<br>
                             <button class="btn btn-tertiary horizontal insNavi" id="portaerei"><img src="/portaerei"
                                     alt="Portaerei" class="portaerei"
-                                    onclick="setBoxSize(isHorizontal('portaerei'), '164px', '32px');disable('portaerei');"></button>
+                                    onclick="setBoxSize(isHorizontal('portaerei'), '164px', '32px');"></button>
                         </p>
                     </div>
                     <div id="divIncrociatori">
                         <p>
                             Incrociatori (3 caselle)<br>
-                            <button class="btn btn-tertiary horizontal insNavi" id="incrociatore1"><img src="/incrociatore"
-                                    alt="Incrociatore1" class="incrociatore"
-                                    onclick="setBoxSize(isHorizontal('incrociatore1'), '128px', '32px');disable('incrociatore1');"></button><br>
-                            <button class="btn btn-tertiary horizontal insNavi" id="incrociatore2"><img src="/incrociatore"
-                                    alt="Incrociatore2" class="incrociatore"
-                                    onclick="setBoxSize(isHorizontal('incrociatore2'), '128px', '32px');disable('incrociatore2');"></button>
+                            <button class="btn btn-tertiary horizontal insNavi" id="incrociatore"><img
+                                    src="/incrociatore" alt="Incrociatore" class="incrociatore"
+                                    onclick="setBoxSize(isHorizontal('incrociatore'), '128px', '32px');"></button><br>
                         </p>
                     </div>
                     <div id="divTorpediniere">
                         <p>
                             Torpediniere (2 caselle)<br>
-                            <button class="btn btn-tertiary horizontal insNavi" id="torpediniere1"><img src="/torpediniere"
-                                    alt="Torpediniere1" class="torpediniere"
-                                    onclick="setBoxSize(isHorizontal('torpediniere1'), '76px', '32px');disable('torpediniere1');"></button>
-                            <button class="btn btn-tertiary horizontal insNavi" id="torpediniere2"><img src="/torpediniere"
-                                    alt="Torpediniere2" class="torpediniere"
-                                    onclick="setBoxSize(isHorizontal('torpediniere2'), '76px', '32px');disable('torpediniere2');"></button><br>
-                            <button class="btn btn-tertiary horizontal insNavi" id="torpediniere3"><img src="/torpediniere"
-                                    alt="Torpediniere3" class="torpediniere"
-                                    onclick="setBoxSize(isHorizontal('torpediniere3'), '76px', '32px');disable('torpediniere3');"></button>
+                            <button class="btn btn-tertiary horizontal insNavi" id="torpediniere"><img
+                                    src="/torpediniere" alt="Torpediniere" class="torpediniere"
+                                    onclick="setBoxSize(isHorizontal('torpediniere'), '76px', '32px');"></button>
                         </p>
                     </div>
                     <div id="divSommergibili">
                         <p>
                             Sommergibili (1 casella)<br>
-                            <button class="btn btn-tertiary horizontal insNavi" id="sommergibile1"><img src="/sommergibile"
-                                    alt="Sommergibile1" class="sommergibile"
-                                    onclick="setBoxSize(isHorizontal('sommergibile1'), '32px', '32px');disable('sommergibile1');"></button>
-                            <button class="btn btn-tertiary horizontal insNavi" id="sommergibile2"><img src="/sommergibile"
-                                    alt="Sommergibile2" class="sommergibile"
-                                    onclick="setBoxSize(isHorizontal('sommergibile2'), '32px', '32px');disable('sommergibile2');"></button><br>
-                            <button class="btn btn-tertiary horizontal insNavi" id="sommergibile3"><img src="/sommergibile"
-                                    alt="Sommergibile3" class="sommergibile"
-                                    onclick="setBoxSize(isHorizontal('sommergibile3'), '32px', '32px');disable('sommergibile3');"></button>
-                            <button class="btn btn-tertiary horizontal insNavi" id="sommergibile4"><img src="/sommergibile"
-                                    alt="Sommergibile4" class="sommergibile"
-                                    onclick="setBoxSize(isHorizontal('sommergibile4'), '32px', '32px');disable('sommergibile4');"></button>
+                            <button class="btn btn-tertiary horizontal insNavi" id="sommergibile"><img
+                                    src="/sommergibile" alt="Sommergibile" class="sommergibile"
+                                    onclick="setBoxSize(isHorizontal('sommergibile'), '32px', '32px');"></button>
                         </p>
                     </div>
                     <button class="btn btn-primary"
-                        onclick='document.getElementById("riquadroGuida").style.visibility = "hidden"'>Nascondi casella
+                        onclick='document.getElementById("riquadroGuida").style.display = "none"'>Nascondi riquadro
                         inserimento</button>
                 </div>
                 <!-- Impostazione dimensioni riquadro in base all'orientamento e al tipo di nave scelta -->
@@ -96,14 +78,14 @@
 
                     function isVisible(id) {
                         const element = document.getElementById(id);
-                        if (element.style.visibility === "visible") {
+                        if (element.style.display === "block") {
                             return true;
                         } else {
                             return false;
                         }
                     }
 
-                    function disable(id) {
+                    function checkDisable(id) {
                         document.getElementById(id).setAttribute("disabled", "true");
                     }
 
@@ -122,11 +104,11 @@
                             riquadroGuida.style.height = widthPx;
                             riquadroGuida.className = "vertical";
                         }
-                        riquadroGuida.style.visibility = "visible";
+                        riquadroGuida.style.display = "block";
                     }
                 </script>
                 <!-- Riquadro guida per l'inserimento delle navi -->
-                <div id="riquadroGuida"></div>
+                <div id="riquadroGuida" style="display: none;"></div>
                 <script>
                     // Movimento del mouse: spostamento riquadro
                     document.addEventListener('mousemove', function (e) {
@@ -660,28 +642,16 @@
     <script>
         function setHorizontal() {
             document.getElementById('portaerei').className = "btn btn-tertiary horizontal insNavi";
-            document.getElementById('incrociatore1').className = "btn btn-tertiary horizontal insNavi";
-            document.getElementById('incrociatore2').className = "btn btn-tertiary horizontal insNavi";
-            document.getElementById('torpediniere1').className = "btn btn-tertiary horizontal insNavi";
-            document.getElementById('torpediniere2').className = "btn btn-tertiary horizontal insNavi";
-            document.getElementById('torpediniere3').className = "btn btn-tertiary horizontal insNavi";
-            document.getElementById('sommergibile1').className = "btn btn-tertiary horizontal insNavi";
-            document.getElementById('sommergibile2').className = "btn btn-tertiary horizontal insNavi";
-            document.getElementById('sommergibile3').className = "btn btn-tertiary horizontal insNavi";
-            document.getElementById('sommergibile4').className = "btn btn-tertiary horizontal insNavi";
+            document.getElementById('incrociatore').className = "btn btn-tertiary horizontal insNavi";
+            document.getElementById('torpediniere').className = "btn btn-tertiary horizontal insNavi";
+            document.getElementById('sommergibile').className = "btn btn-tertiary horizontal insNavi";
         }
 
         function setVertical() {
             document.getElementById('portaerei').className = "btn btn-tertiary vertical insNavi";
-            document.getElementById('incrociatore1').className = "btn btn-tertiary vertical insNavi";
-            document.getElementById('incrociatore2').className = "btn btn-tertiary vertical insNavi";
-            document.getElementById('torpediniere1').className = "btn btn-tertiary vertical insNavi";
-            document.getElementById('torpediniere2').className = "btn btn-tertiary vertical insNavi";
-            document.getElementById('torpediniere3').className = "btn btn-tertiary vertical insNavi";
-            document.getElementById('sommergibile1').className = "btn btn-tertiary vertical insNavi";
-            document.getElementById('sommergibile2').className = "btn btn-tertiary vertical insNavi";
-            document.getElementById('sommergibile3').className = "btn btn-tertiary vertical insNavi";
-            document.getElementById('sommergibile4').className = "btn btn-tertiary vertical insNavi";
+            document.getElementById('incrociatore').className = "btn btn-tertiary vertical insNavi";
+            document.getElementById('torpediniere').className = "btn btn-tertiary vertical insNavi";
+            document.getElementById('sommergibile').className = "btn btn-tertiary vertical insNavi";
         }
     </script>
     <!-- GESTIONE COMUNICAZIONE CON IL SERVER -->

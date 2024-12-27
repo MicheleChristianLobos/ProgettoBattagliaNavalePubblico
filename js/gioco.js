@@ -224,6 +224,8 @@ function occupaCaselle(numCaselle, horizontal, posIniziale) {
                 }
             }
         }
+        // Controlla se va disabilitato il bottone d'inserimento della nave di un certo tipo (navi rimaste == 0)
+        checkDisable(tipoNave);
     }
 }
 
