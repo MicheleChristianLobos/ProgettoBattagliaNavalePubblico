@@ -360,7 +360,7 @@ function getPositionByID(id) {
     return position;
 }
 
-function inviaTabelloneG1() {
+function calcolaTabelloneG1() {
     /* Costruzione oggetto JS tabellone
        Riga - colonne: es. 1 - [0, 1, 2, ..., 9]
        Come fatto fin dall'inizio */
@@ -377,9 +377,7 @@ function inviaTabelloneG1() {
         });
         tabellone[riga] = naviRiga;
     }
-    // Invio al server con socket.emit()
-    console.log(tabellone);
-    // socket.emit("tabellone", tabellone);
+    return tabellone;
 }
 
 function sparaCasella(coordinate) {

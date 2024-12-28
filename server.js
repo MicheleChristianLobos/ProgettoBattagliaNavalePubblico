@@ -3,14 +3,14 @@ Michele Christian Lobos x Nicola Schianchi - 5^C Inf Progetto TDP "Battaglia Nav
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const express = require("express")  
+const express = require("express")
 const app = express();  //Per manipolare il comportamento dell'applicazione
 //MiddleWare per le sessioni (MiddleWare = interfaccia tra applicazione e livelli di più sottostanti (SO, ecc.))
-const sessione = require("express-session");  
+const sessione = require("express-session");
 //Memorystore è usato per poter salvare le sessioni degli utenti (viene gestito nell' app.use() dove vengono gestite anche le sessioni)
 const MemoryStore = require("memorystore")(sessione) //C'è (sessione) perché è una funzione (come se facessi db((sessione)) ma sulla dichiarazione)
 //const { escape } = require('querystring');
-let db = new MemoryStore({ checkPeriod: 3600000})  //Viene resettato ogni ora (3600000 ms)
+let db = new MemoryStore({ checkPeriod: 3600000 })  //Viene resettato ogni ora (3600000 ms)
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -90,12 +90,12 @@ function requestHandler(req, res) {
       mimeType = "image/png";
       break;
     case "/formaTitolo":
-        filePath = "./assets/imgAnime/rettangoloPerTitolo.png";
-        mimeType = "image/png";
+      filePath = "./assets/imgAnime/rettangoloPerTitolo.png";
+      mimeType = "image/png";
       break;
     case "/formaDescrizione":
-        filePath = "./assets/imgAnime/formaDescrizione.png";
-        mimeType = "image/png";
+      filePath = "./assets/imgAnime/formaDescrizione.png";
+      mimeType = "image/png";
       break;
     case "/x_animejs_css":
       filePath = "./css/xAnime.css";
@@ -182,11 +182,11 @@ const io = require("socket.io")(server, {
 //Per le sessioni -------------------------------------------------------------------------------------------------------------------------
 
 
-let middleWareSession = sessione ({
+let middleWareSession = sessione({
   resave: false,            //Permette di salvare la sessione solo quando viene modificata durante le richieste del client (con false)
   saveUninitialized: true,  //Permette di salvare la sessione quando viene aggiunta (uninitialized) (con true)
   secret: "forsestocapendocosastofacendo",
-  cookie: {maxAge: 60000, secure: false},   //secure: false perchè si sta usando HTTP (true se HTTPS) e il maxAge è di 1 minuto (60000 ms)
+  cookie: { maxAge: 60000, secure: false },   //secure: false perchè si sta usando HTTP (true se HTTPS) e il maxAge è di 1 minuto (60000 ms)
   store: db
 })
 
@@ -210,11 +210,13 @@ io.sockets.on('connection', function (socket) {
 
   const session = socket.request.session;
 
+  let tabelloni = {};
+
   /* Differenza tra socket.id e session.id:
   Il socket.id viene modificato per ogni connessione mentre il session.id è persistente
   (se chiudi il browser, vieni riconosciuto fino a un tot di tempo (maxAge del cookie))
   */
-  socket.username = socket.id;  
+  socket.username = socket.id;
   console.log('cliente: connesso ' + socket.id);
   socket.emit('connesso', hostname + " " + "porta:" + " " + port);
   numGiocatori++;
@@ -223,33 +225,31 @@ io.sockets.on('connection', function (socket) {
   console.log('Clienti connessi:', numGiocatori);
   console.log("Session-ID: " + session.id);  //Stampa il cookie di sessione con tutti i suoi parametri
 
-  if(session) //Se la sessione non è NULL
-    {
-      session.views = (session.views || 0) + 1;
-      session.save()
+  if (session) //Se la sessione non è NULL
+  {
+    session.views = (session.views || 0) + 1;
+    session.save()
 
-      if(session.views != 1)
-        console.log("Hai visitato questo sito " + session.views + " volte");
-      else
-        console.log("Hai visitato questo sito " + session.views + " volta");
+    if (session.views != 1)
+      console.log("Hai visitato questo sito " + session.views + " volte");
+    else
+      console.log("Hai visitato questo sito " + session.views + " volta");
 
-    }
+  }
 
-    if (session && session.username) {
-      socket.username = session.username;
+  if (session && session.username) {
+    socket.username = session.username;
 
-      // Riassocia l'ID del socket
-      giocatori = giocatori.map(user => {
-        if (user.name === session.username) {
-          user.id = socket.id;
-        }
-        return user;
-      });
+    // Riassocia l'ID del socket
+    giocatori = giocatori.map(user => {
+      if (user.name === session.username) {
+        user.id = socket.id;
+      }
+      return user;
+    });
 
-      console.log(`Utente riconnesso: ${session.username}`);
-    }
-
-
+    console.log(`Utente riconnesso: ${session.username}`);
+  }
 
   socket.on("registrazione", function (data) {
     // Controllare se il nome utente è già registrato
@@ -260,15 +260,25 @@ io.sockets.on('connection', function (socket) {
     } else {
       giocatori.push({ name: data, id: socket.id });
       console.log("Utente aggiunto:", data);
-      
+
       session.username = data;
       session.save();
-
     }
   });
 
   socket.on("aggiorna_lista", function () {
     io.emit("aggiorna_lista", giocatori);
+  });
+
+  socket.on("tabellone", function (data) {
+    tabelloni[session.username] = data;
+    console.log("--- Tabelloni ---");
+    for (var usr in tabelloni) {
+      console.log(`-- ${usr} --`);
+      for (var riga in tabelloni[usr]) {
+        console.log(`${riga}: ${tabelloni[usr][riga]}`);
+      }
+    }
   });
 
   socket.on('disconnect', function (reason) {

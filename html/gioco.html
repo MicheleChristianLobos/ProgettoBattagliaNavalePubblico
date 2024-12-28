@@ -377,7 +377,7 @@
                         </tbody>
                     </table>
                     <button class="btn btn-success" id="confermaTabellone" type="submit" disabled="true"
-                        onclick="inviaTabelloneG1();">Conferma</button>
+                        onclick='inviaTabellone();'>Conferma</button>
                 </div>
 
                 <div class="container-md campoDiBattaglia crosshair">
@@ -674,6 +674,10 @@
 
         // Aggiunta dello username al titolo della tabella G1 (di sinistra, blu)
         document.getElementById("username").innerText = `( ${username} )`;
+
+        function inviaTabellone() {
+            socket.emit("tabellone", calcolaTabelloneG1());
+        }
     </script>
 
     <!--AnimeJS-->
