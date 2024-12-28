@@ -376,7 +376,8 @@
                             </tr>
                         </tbody>
                     </table>
-                    <button class="btn btn-success" id="confermaTabellone" type="submit" disabled="true" onclick="inviaTabelloneG1();">Conferma</button>
+                    <button class="btn btn-success" id="confermaTabellone" type="submit" disabled="true"
+                        onclick="inviaTabelloneG1();">Conferma</button>
                 </div>
 
                 <div class="container-md campoDiBattaglia crosshair">
@@ -659,6 +660,21 @@
         }
     </script>
     <!-- GESTIONE COMUNICAZIONE CON IL SERVER -->
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"
+        integrity="sha384-mkQ3/7FUtcGyoppY6bz/PORYoGqOl7/aSUMn2ymDOJcapfS6PHqxhRTMh1RR0Q6+"
+        crossorigin="anonymous"></script>
+    <script>
+        // Connessione al socket
+        const socket = io.connect("http://127.0.0.1:3000");
+
+        // Registrazione username
+        username = sessionStorage.getItem("username");
+        // console.log("Username:  " + username);
+        socket.emit("registrazione", username);
+
+        // Aggiunta dello username al titolo della tabella G1 (di sinistra, blu)
+        document.getElementById("username").innerText = `( ${username} )`;
+    </script>
 
     <!--AnimeJS-->
     <script src="/animejs_min"></script>
