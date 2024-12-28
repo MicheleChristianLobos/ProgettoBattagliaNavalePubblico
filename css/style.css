@@ -12,6 +12,7 @@ table.tabellone {
 }
 
 img.portaerei {
+    z-index: 8 !important;
     min-width: 164px;
     min-height: 32px;
     max-width: 164px;
@@ -19,6 +20,7 @@ img.portaerei {
 }
 
 img.incrociatore {
+    z-index: 8 !important;
     min-width: 128px;
     min-height: 32px;
     max-width: 128px;
@@ -26,6 +28,7 @@ img.incrociatore {
 }
 
 img.torpediniere {
+    z-index: 8 !important;
     min-width: 76px;
     min-height: 32px;
     max-width: 76px;
@@ -33,6 +36,7 @@ img.torpediniere {
 }
 
 img.sommergibile {
+    z-index: 8 !important;
     min-width: 32px;
     min-height: 32px;
     max-width: 32px;

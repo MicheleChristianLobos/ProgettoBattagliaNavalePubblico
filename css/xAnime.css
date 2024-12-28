@@ -129,6 +129,16 @@
     font-size: 100px;
 }
 
+.casellaNave
+{
+    z-index: 1;
+}
+
+.casellaNaveNemica
+{
+    z-index: 1;
+}
+
 
 .visibile
 {

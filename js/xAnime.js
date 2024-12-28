@@ -1,13 +1,17 @@
 //File JS che gestisce le animazioni di animeJS - Miki
 var roundLogEl = document.querySelector('.round-log');
+let i = 0
+const DELAY_ESPLOSIONE = 2400;
+const DURATA_ESPLOSIONE = 400;
 
 var gestoreEsplosione1 = anime.timeline({
   targets: ".esplosione-bg",
   easing: 'easeInOutQuad',
-  delay: 3600,
+  delay: DELAY_ESPLOSIONE,
   translateX: [1480, 1480],
   translateY: [450, 450],
   endDelay: 1000,
+  duration: DURATA_ESPLOSIONE,
   scale:10
 })
 .add({ targets: '.esplosione-bg', background: 'rgb(199, 52, 52)',  }, 0)
@@ -15,10 +19,11 @@ var gestoreEsplosione1 = anime.timeline({
 var gestoreEsplosione2 = anime.timeline({
   targets: ".esplosione-bg-urto1",
   easing: 'easeInOutQuad',
-  delay: 3600,
+  delay: DELAY_ESPLOSIONE,
   translateX: [1480, 1480],
   translateY: [450, 450],
   endDelay: 1000,
+  duration: DURATA_ESPLOSIONE,
   scale:20
 })
 .add({ targets: '.esplosione-bg-urto1', background: 'rgba(246, 62, 0, 0.42)'}, 0)
@@ -26,18 +31,24 @@ var gestoreEsplosione2 = anime.timeline({
 var gestoreEsplosione3 = anime.timeline({
   targets: ".esplosione-bg-urto2",
   easing: 'easeInOutQuad',
-  delay: 3600,
+  delay: DELAY_ESPLOSIONE,
   translateX: [1480, 1480],
   translateY: [450, 450],
   endDelay: 1000,
+  duration: DURATA_ESPLOSIONE,
   scale:30
 })
 .add({ targets: '.esplosione-bg-urto2', background: 'rgba(255, 132, 0, 0.46)'}, 0)
 
+//Da rivedere la funzione
 var gestoreEsplosioneDefault = anime.timeline({
   targets: ".gestioneEsplosione",
   easing: 'easeInOutQuad',
-  delay: 4600,
+  delay: function(){
+    i+=1;
+    return 2800*i;
+  },
+  opacity: [1, 0],
 })
 .add({ targets: '.gestioneEsplosione', background: 'rgba(255, 132, 0, 0)'}, 0)
 
@@ -83,12 +94,31 @@ anime
 ({
   targets: '.razzo',
   easing: 'easeInOutQuad',
-  translateX: [-100, 1480],
+  translateX: [-100, 1600],
   translateY: 500,
   delay: 1600,
-  duration: 2000
+  duration: 1000
 });
 
+anime
+({
+  targets: '.razzo2',
+  easing: 'easeInOutQuad',
+  translateX: [-100, 1600],
+  translateY: 500,
+  delay: 1600,
+  duration: 1000
+});
+
+anime
+({
+  targets: '.razzo3',
+  easing: 'easeInOutQuad',
+  translateX: [-100, 1600],
+  translateY: 500,
+  delay: 1600,
+  duration: 1000
+});
 
 //Per la forma sotto il titolo
 anime

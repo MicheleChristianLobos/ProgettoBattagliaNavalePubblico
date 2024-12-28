@@ -24,7 +24,7 @@ for (let i = 0; i < listaCelle.length / 20; i++) {
             let height = document.getElementById("riquadroGuida").style.height;
             if (visible) {
                 if (horizontal) {
-                    switch (width) {
+                    switch (width || height) {
                         case "164px":
                             numCaselle = 4;
                             break;
@@ -61,7 +61,7 @@ for (let i = 0; i < listaCelle.length / 20; i++) {
                     }
                 }
                 if (controllaCelleAdiacenti(numCaselle, horizontal, getPositionByID(listaCelle[j].parentElement.id))) {
-                    alert("ok");
+                    //alert("ok");
                     if (posizionaNave(numCaselle, horizontal, getPositionByID(listaCelle[j].parentElement.id))) {
                         occupaCaselle(numCaselle, horizontal, getPositionByID(listaCelle[j].parentElement.id));
                     }
