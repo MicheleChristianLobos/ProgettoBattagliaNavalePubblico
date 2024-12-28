@@ -91,8 +91,8 @@ Michele Christian Lobos x Nicola Schianchi - 5^C Inf Progetto TDP "Battaglia Nav
                     event.preventDefault();
                     username = document.getElementById("username").value;
                     if (username != "") {
-                        window.location.href = "/gioco";
                         sessionStorage.setItem("username", username);
+                        window.location.href = "/gioco";
                     }
                 });
             </script>

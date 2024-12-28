@@ -17,6 +17,7 @@ const port = 3000;
 
 let numGiocatori = 0
 let giocatori = [];
+let objTabelloni = {};
 
 const ERR404 = `<!doctype html>
 <html lang="it" data-bs-theme="dark">
@@ -210,8 +211,6 @@ io.sockets.on('connection', function (socket) {
 
   const session = socket.request.session;
 
-  let tabelloni = {};
-
   /* Differenza tra socket.id e session.id:
   Il socket.id viene modificato per ogni connessione mentre il session.id è persistente
   (se chiudi il browser, vieni riconosciuto fino a un tot di tempo (maxAge del cookie))
@@ -271,14 +270,15 @@ io.sockets.on('connection', function (socket) {
   });
 
   socket.on("tabellone", function (data) {
-    tabelloni[session.username] = data;
-    console.log("--- Tabelloni ---");
-    for (var usr in tabelloni) {
+    objTabelloni[session.username] = data;
+    console.log("--- Tabelloni ---" + Object.values(objTabelloni).length);
+    for (var usr in objTabelloni) {
       console.log(`-- ${usr} --`);
-      for (var riga in tabelloni[usr]) {
-        console.log(`${riga}: ${tabelloni[usr][riga]}`);
+      for (var riga in objTabelloni[usr]) {
+        console.log(`${riga}: ${objTabelloni[usr][riga]}`);
       }
     }
+    console.log(''); // A capo
   });
 
   socket.on('disconnect', function (reason) {
