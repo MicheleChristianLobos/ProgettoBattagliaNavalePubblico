@@ -298,6 +298,7 @@ io.sockets.on('connection', function (socket) {
       giocatori = giocatori.map(user => {
         if (user.name === session.username) {
           user.id = null; // Segna l'utente come "disconnesso" senza eliminarlo
+          delete objTabelloni[session.username]; // Rimuovi il tabellone
         }
         return user;
       });
