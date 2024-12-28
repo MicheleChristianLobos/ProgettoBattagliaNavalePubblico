@@ -124,7 +124,7 @@
                 </script>
                 <!-- Tabellone di gioco giocatore 1 (con navi posizionate) -->
                 <div class="container-md campoDiBattaglia crosshair">
-                    <h2 class="h2">Il tuo tabellone</h2>
+                    <h2 class="h2">Il tuo tabellone <span id="username"></span></h2>
                     <table
                         class="table table-responsive table-hover table-bordered border-primary text-center tabellone crosshair"
                         id="tabelloneG1" style="z-index: 1;">
@@ -376,7 +376,8 @@
                             </tr>
                         </tbody>
                     </table>
-                    <button class="btn btn-success" id="confermaTabellone" type="submit" disabled="true" onclick="inviaTabelloneG1();">Conferma</button>
+                    <button class="btn btn-success" id="confermaTabellone" type="submit" disabled="true"
+                        onclick="inviaTabelloneG1();">Conferma</button>
                 </div>
 
                 <div class="container-md campoDiBattaglia crosshair">
@@ -659,6 +660,21 @@
         }
     </script>
     <!-- GESTIONE COMUNICAZIONE CON IL SERVER -->
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"
+        integrity="sha384-mkQ3/7FUtcGyoppY6bz/PORYoGqOl7/aSUMn2ymDOJcapfS6PHqxhRTMh1RR0Q6+"
+        crossorigin="anonymous"></script>
+    <script>
+        // Connessione al socket
+        const socket = io.connect("http://127.0.0.1:3000");
+
+        // Registrazione username
+        username = sessionStorage.getItem("username");
+        // console.log("Username:  " + username);
+        socket.emit("registrazione", username);
+
+        // Aggiunta dello username al titolo della tabella G1 (di sinistra, blu)
+        document.getElementById("username").innerText = `( ${username} )`;
+    </script>
 
     <!--AnimeJS-->
     <script src="/animejs_min"></script>
