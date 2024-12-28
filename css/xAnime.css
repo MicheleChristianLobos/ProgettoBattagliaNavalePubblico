@@ -151,15 +151,16 @@
 
 .casellaNave
 {
-    z-index: 100;
-    background-attachment: fixed;
+    z-index: -10;
+    overflow: visible;
+    clip-path: none;
+    object-fit: cover;
 }
 
 .casellaNaveNemica
 {
     z-index: 1;
 }
-
 
 .visibile
 {

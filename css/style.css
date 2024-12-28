@@ -17,6 +17,7 @@ img.portaerei {
     min-height: 32px;
     max-width: 164px;
     max-height: 32px;
+    z-index: 100;
 }
 
 img.incrociatore {
@@ -25,6 +26,7 @@ img.incrociatore {
     min-height: 32px;
     max-width: 128px;
     max-height: 32px;
+    z-index: 100;
 }
 
 img.torpediniere {
@@ -33,6 +35,7 @@ img.torpediniere {
     min-height: 32px;
     max-width: 76px;
     max-height: 32px;
+    z-index: 100;
 }
 
 img.sommergibile {
@@ -41,12 +44,14 @@ img.sommergibile {
     min-height: 32px;
     max-width: 32px;
     max-height: 32px;
+    z-index: 100;
 }
 
 img.cella {
     margin-left: -150%;
     margin-top: -100%;
     opacity: 100%;
+    z-index: 100;
 }
 
 button.horizontal {
