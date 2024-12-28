@@ -7,7 +7,27 @@
     margin: 5px;
 }
 
-.razzo
+.esplosione {
+    position: absolute; /* Posizionamento relativo alla finestra del browser */
+    bottom: 20px;       /* Distanza dal bordo inferiore */
+    right: 20px;        /* Distanza dal bordo destro */
+    width: 100px;       /* Larghezza dell'esplosione */
+    height: 100px;      /* Altezza dell'esplosione */
+    border-radius: 50%; /* Per simulare un'esplosione circolare */
+  }
+  
+  
+.pezzo {
+    z-index: -15;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #a71f00;
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+  
+
+.razzo, .razzo2, .razzo3
 {
     height: 50px;
     width: 50px;

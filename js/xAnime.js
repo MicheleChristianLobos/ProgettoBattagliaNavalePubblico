@@ -1,6 +1,5 @@
 //File JS che gestisce le animazioni di animeJS - Miki
 var roundLogEl = document.querySelector('.round-log');
-let i = 0
 const DELAY_ESPLOSIONE = 2400;
 const DURATA_ESPLOSIONE = 400;
 
@@ -44,11 +43,9 @@ var gestoreEsplosione3 = anime.timeline({
 var gestoreEsplosioneDefault = anime.timeline({
   targets: ".gestioneEsplosione",
   easing: 'easeInOutQuad',
-  delay: function(){
-    i+=1;
-    return 2800*i;
-  },
+  delay: 2800,
   opacity: [1, 0],
+  duration: 3500
 })
 .add({ targets: '.gestioneEsplosione', background: 'rgba(255, 132, 0, 0)'}, 0)
 
@@ -105,8 +102,8 @@ anime
   targets: '.razzo2',
   easing: 'easeInOutQuad',
   translateX: [-100, 1600],
-  translateY: 500,
-  delay: 1600,
+  translateY: 550,
+  delay: 2000,
   duration: 1000
 });
 
@@ -115,8 +112,8 @@ anime
   targets: '.razzo3',
   easing: 'easeInOutQuad',
   translateX: [-100, 1600],
-  translateY: 500,
-  delay: 1600,
+  translateY: 300,
+  delay: 2100,
   duration: 1000
 });
 
@@ -130,15 +127,46 @@ anime
   easing: 'easeInOutExpo'
 })
 
+anime({
+  targets: '.vibrazione', // Selettore degli elementi
+  translateX: [-16, 16],    // Movimento da sinistra a destra
+  duration: 100,          // Durata di ogni oscillazione
+  direction: 'alternate', // Alterna avanti e indietro
+  delay: DELAY_ESPLOSIONE + 200,
+  easing: 'easeInOutSine', // Easing per un effetto fluido
+  loop: 2,
+});
+
 //Per la forma sotto la descrizione
 anime
 ({
   targets: ".quadratoDescrizione",
-  translateX: [10000, 200],
+  translateX: [10000, 300],
   delay: anime.stagger(0, {start: 50}),
   duration: 1000,
   easing: 'easeInOutExpo'
 })
+
+// Genera casualmente i frammenti e li fa esplodere
+anime({
+  targets: '.pezzo',
+  translateX: function () {
+    return anime.random(-200, -1200); //Movimento casuale orizzontale
+  },
+  translateY: function () {
+    return anime.random(-20, -500); //Movimento casuale verticale
+  },
+  scale: function () {
+    return anime.random(0.5, 5); //Dimensioni casuali
+  },
+  rotate: function () {
+    return anime.random(0, 360); //Rotazione casuale
+  },
+  duration: 1000,
+  easing: 'easeOutExpo',
+  delay: DELAY_ESPLOSIONE + 200,
+});
+
 
 //Per l'animazione della formazione della tabella amica
 anime

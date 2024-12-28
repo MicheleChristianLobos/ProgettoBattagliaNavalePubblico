@@ -61,13 +61,29 @@ for (let i = 0; i < listaCelle.length / 20; i++) {
                     }
                 }
                 if (controllaCelleAdiacenti(numCaselle, horizontal, getPositionByID(listaCelle[j].parentElement.id))) {
-                    //alert("ok");
                     if (posizionaNave(numCaselle, horizontal, getPositionByID(listaCelle[j].parentElement.id))) {
                         occupaCaselle(numCaselle, horizontal, getPositionByID(listaCelle[j].parentElement.id));
+                        switch (numCaselle) {
+                            case 4:
+                                updateNum("numPortaerei");
+                                break;
+                            case 3:
+                                updateNum("numIncrociatori");
+                                break;
+                            case 2:
+                                updateNum("numTorpedinieri");
+                                break;
+                            case 1:
+                                updateNum("numSommergibili");
+                                break;
+                            default:
+                                break;
+                        }
                     }
                 } else {
-                    alert("no");
+                    alert("Posizione non valida.");
                 }
+                checkEnableConferma();
             } else {
                 return;
             }
@@ -75,6 +91,20 @@ for (let i = 0; i < listaCelle.length / 20; i++) {
         riga.push(listaCelle[j]);
     }
     tabelloneG1[i + 1] = riga;
+}
+
+let tabelloneG2 = {};
+
+// Memorizzazione tabellone Giocatore 2
+for (let i = listaCelle.length / 20; i < listaCelle.length / 10; i++) {
+    let riga = [];
+    for (let j = (i * 10); j < (i * 10) + 10; j++) {
+        listaCelle[j].addEventListener('click', function () {
+            sparaCasella(getPositionByID(listaCelle[j].parentElement.id));
+        });
+        riga.push(listaCelle[j]);
+    }
+    tabelloneG2[(i + 1) - 10] = riga;
 }
 
 function posizionaNave(numCaselle, horizontal, posIniziale) {
@@ -227,20 +257,70 @@ function occupaCaselle(numCaselle, horizontal, posIniziale) {
     }
 }
 
-let tabelloneG2 = {};
-
-// Memorizzazione tabellone Giocatore 2
-for (let i = listaCelle.length / 20; i < listaCelle.length; i++) {
-    let riga = [];
-    for (let j = (i - 100) * 10; j < (i - 100) * 10 + 10; j++) {
-        //console.log("j: " + j);
-        // errore qua??
-        /* listaCelle[j].addEventListener('click', function () {
-            ctrlPos();
-        }); */
-        riga.push(listaCelle[j]);
+function updateNum(id) {
+    let span = document.getElementById(id);
+    switch (id) {
+        case "numPortaerei":
+            if (naviDisponibili.portaerei == 0) {
+                span.innerText = "0";
+                span.className = "numSpan text-danger";
+                let btn = document.getElementById("portaerei");
+                disable(btn.id);
+            } else {
+                span.innerText = `${naviDisponibili.portaerei}`;
+            }
+            break;
+        case "numIncrociatori":
+            if (naviDisponibili.incrociatori == 0) {
+                span.innerText = "0";
+                span.className = "numSpan text-danger";
+                let btn = document.getElementById("incrociatore");
+                disable(btn.id);
+            } else {
+                span.innerText = `${naviDisponibili.incrociatori}`;
+            }
+            break;
+        case "numTorpedinieri":
+            if (naviDisponibili.torpedinieri == 0) {
+                span.innerText = "0";
+                span.className = "numSpan text-danger";
+                let btn = document.getElementById("torpediniere");
+                disable(btn.id);
+            } else {
+                span.innerText = `${naviDisponibili.torpedinieri}`;
+            }
+            break;
+        case "numSommergibili":
+            if (naviDisponibili.sommergibili == 0) {
+                span.innerText = "0";
+                span.className = "numSpan text-danger";
+                let btn = document.getElementById("sommergibile");
+                disable(btn.id);
+            } else {
+                span.innerText = `${naviDisponibili.sommergibili}`;
+            }
+            break;
+        default:
+            break;
     }
-    tabelloneG2[i + 1] = riga;
+}
+
+function checkEnableConferma() {
+    // Controllo navi ancora disponibili per abilitare o meno il bottone di conferma del tabellone
+    let abilitare = true;
+    for (var tipo in naviDisponibili) {
+        if (naviDisponibili[tipo] > 0) {
+            abilitare = false;
+            break;
+        }
+    }
+
+    let btnConferma = document.getElementById("confermaTabellone");
+    if (abilitare) {
+        btnConferma.removeAttribute("disabled");
+    } else {
+        btnConferma.setAttribute("disabled", "true");
+    }
 }
 
 function controllaCelleAdiacenti(numero, orizzontale, posIniziale) {
@@ -278,4 +358,32 @@ function getPositionByID(id) {
         position.push(parseInt(coord));
     });
     return position;
+}
+
+function inviaTabelloneG1() {
+    /* Costruzione oggetto JS tabellone
+       Riga - colonne: es. 1 - [0, 1, 2, ..., 9]
+       Come fatto fin dall'inizio */
+    let tabellone = {};
+    for (var riga in tabelloneG1) {
+        var naviRiga = []
+        tabelloneG1[riga].forEach(c => {
+            // Se c'è una nave
+            if (c.getAttribute("disabled") === "true") {
+                naviRiga.push(true);
+            } else { // Se non c'è alcuna nave
+                naviRiga.push(false);
+            }
+        });
+        tabellone[riga] = naviRiga;
+    }
+    // Invio al server con socket.emit()
+    console.log(tabellone);
+    // socket.emit("tabellone", tabellone);
+}
+
+function sparaCasella(coordinate) {
+    // Manda la richiesta al server, che la elaborerà
+    // socket.emit("spara", coordinate);
+    console.log("spara a " + coordinate);
 }
