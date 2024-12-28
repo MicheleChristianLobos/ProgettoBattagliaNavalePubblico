@@ -271,7 +271,7 @@ io.sockets.on('connection', function (socket) {
 
   socket.on("tabellone", function (data) {
     objTabelloni[session.username] = data;
-    console.log("--- Tabelloni ---" + Object.values(objTabelloni).length);
+    console.log("--- Tabelloni ---");
     for (var usr in objTabelloni) {
       console.log(`-- ${usr} --`);
       for (var riga in objTabelloni[usr]) {
