@@ -8,12 +8,12 @@
 }
 
 .esplosione {
-    position: absolute; /* Posizionamento relativo alla finestra del browser */
-    bottom: 20px;       /* Distanza dal bordo inferiore */
-    right: 20px;        /* Distanza dal bordo destro */
-    width: 100px;       /* Larghezza dell'esplosione */
-    height: 100px;      /* Altezza dell'esplosione */
-    border-radius: 50%; /* Per simulare un'esplosione circolare */
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
   }
   
   
