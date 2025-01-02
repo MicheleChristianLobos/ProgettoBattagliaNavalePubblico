@@ -169,20 +169,12 @@ anime({
 
 
 //Per l'animazione della formazione della tabella amica
-anime
+/*anime
 ({
   targets: '.casellaNave',
   translateX: [-1000, 0],
   delay: anime.stagger(100) // delay starts at 500ms then increase by 100ms for each elements.
-});
-
-
-function childHandler(e)
-{
-  TweenMax.to("#divAmico", 1, {rotation:"+=360", clearProps: 'all'});
-  
-}
-
+});*/
 
 //Per l'animazione della formazione della tabella nemica
 anime
