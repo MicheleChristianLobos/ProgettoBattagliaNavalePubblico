@@ -1,5 +1,5 @@
 /* Server
-Michele Christian Lobos x Nicola Schianchi - 5^C Inf Progetto TDP "Battaglia Navale"*/
+Michele Christian Lobos x Nicola Schianchi - 5^C Inf Progetto Pubblico TDP "Battaglia Navale"*/
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
