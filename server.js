@@ -281,6 +281,36 @@ io.sockets.on('connection', function (socket) {
     console.log(''); // A capo
   });
 
+  socket.on("controlloSparo", function (posizione) {
+    const usernameAvversario = "sLOBOS" // Ottieni il nome dell'avversario
+    const tabelloneAvversario = objTabelloni[usernameAvversario];
+
+    const [riga, colonna] = posizione; // Posizione cliccata
+
+    console.log(riga + " e " + colonna);
+    console.log("esito: " + objTabelloni[usernameAvversario][riga[colonna]]);
+    const cella = tabelloneAvversario[riga][colonna];
+
+    if (tabelloneAvversario[riga][colonna]) { // Supponendo che la cella contenga "nave" se c'è una nave
+        socket.emit("risultatoColpo", { esito: true, posizione });
+    } else {
+        socket.emit("risultatoColpo", { esito: false, posizione });
+    }
+  });
+
+  socket.on("risultatoColpo", function (data) {
+    const { esito, posizione } = data;
+    if (esito) {
+        alert("Colpo a segno!");
+        //aggiornaUI(posizione, true); // Funzione per aggiornare la cella come colpita
+    } else {
+        alert("Colpo mancato.");
+        //aggiornaUI(posizione, false); // Funzione per aggiornare la cella come vuota
+    }
+  });
+
+
+
   socket.on('disconnect', function (reason) {
     /*numGiocatori--;
     console.log('Clienti connessi:', numGiocatori);

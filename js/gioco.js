@@ -100,6 +100,7 @@ for (let i = listaCelle.length / 20; i < listaCelle.length / 10; i++) {
     let riga = [];
     for (let j = (i * 10); j < (i * 10) + 10; j++) {
         listaCelle[j].addEventListener('click', function () {
+            //SparaCasella() e' stata spostata in "gioco.html" da Miki :>
             sparaCasella(getPositionByID(listaCelle[j].parentElement.id));
         });
         riga.push(listaCelle[j]);
@@ -380,8 +381,3 @@ function calcolaTabelloneG1() {
     return tabellone;
 }
 
-function sparaCasella(coordinate) {
-    // Manda la richiesta al server, che la elaborerà
-    // socket.emit("spara", coordinate);
-    console.log("spara a " + coordinate);
-}

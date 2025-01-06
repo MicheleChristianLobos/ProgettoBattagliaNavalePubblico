@@ -382,7 +382,7 @@
 
                 <div class="container-md campoDiBattaglia crosshair">
                     <!-- Tabellone di gioco giocatore 2 (per cercare di colpire le navi avversarie) -->
-                    <h2 class="h2">Tabellone avversario</h2>
+                    <h2 class="h2" id = "TitoloTabelloneAvversario">Tabellone avversario</h2>
                     <table
                         class="table table-responsive table-hover table-bordered border-danger text-center tabellone crosshair"
                         id="tabelloneG2" style="z-index: 1;">
@@ -645,6 +645,8 @@
 
     <!-- Script orientamento navi e conferma disposizione -->
     <script>
+        titoloAvversario = document.getElementById("titolo")
+
         function setHorizontal() {
             document.getElementById('portaerei').className = "btn btn-tertiary horizontal insNavi";
             document.getElementById('incrociatore').className = "btn btn-tertiary horizontal insNavi";
@@ -677,6 +679,13 @@
 
         function inviaTabellone() {
             socket.emit("tabellone", calcolaTabelloneG1());
+        }
+
+        function sparaCasella(coordinate) {
+            // Manda la richiesta al server, che la elaborerà
+            // socket.emit("spara", coordinate);
+            console.log("spara a " + coordinate);
+            socket.emit("controlloSparo", coordinate);
         }
     </script>
 
