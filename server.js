@@ -281,35 +281,22 @@ io.sockets.on('connection', function (socket) {
     console.log(''); // A capo
   });
 
-  socket.on("controlloSparo", function (posizione) {
-    const usernameAvversario = "sLOBOS" // Ottieni il nome dell'avversario
+  socket.on("controlloSparo", function ({ posizione, giocatore }) {
+    const usernameAvversario = Object.keys(objTabelloni).filter(usr => usr.toLowerCase() != giocatore.toLowerCase()); // Ottieni il nome dell'avversario
     const tabelloneAvversario = objTabelloni[usernameAvversario];
 
     const [riga, colonna] = posizione; // Posizione cliccata
 
     console.log(riga + " e " + colonna);
-    console.log("esito: " + objTabelloni[usernameAvversario][riga[colonna]]);
-    const cella = tabelloneAvversario[riga][colonna];
+    console.log("esito: " + objTabelloni[usernameAvversario][riga][colonna - 1]);
+    const cella = tabelloneAvversario[riga][colonna - 1];
 
-    if (tabelloneAvversario[riga][colonna]) { // Supponendo che la cella contenga "nave" se c'è una nave
-        socket.emit("risultatoColpo", { esito: true, posizione });
+    if (tabelloneAvversario[riga][colonna - 1]) { // Supponendo che la cella contenga "nave" se c'è una nave
+      socket.emit("risultatoColpo", { esito: true, posizione });
     } else {
-        socket.emit("risultatoColpo", { esito: false, posizione });
+      socket.emit("risultatoColpo", { esito: false, posizione });
     }
   });
-
-  socket.on("risultatoColpo", function (data) {
-    const { esito, posizione } = data;
-    if (esito) {
-        alert("Colpo a segno!");
-        //aggiornaUI(posizione, true); // Funzione per aggiornare la cella come colpita
-    } else {
-        alert("Colpo mancato.");
-        //aggiornaUI(posizione, false); // Funzione per aggiornare la cella come vuota
-    }
-  });
-
-
 
   socket.on('disconnect', function (reason) {
     /*numGiocatori--;

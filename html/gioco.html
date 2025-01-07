@@ -382,7 +382,7 @@
 
                 <div class="container-md campoDiBattaglia crosshair">
                     <!-- Tabellone di gioco giocatore 2 (per cercare di colpire le navi avversarie) -->
-                    <h2 class="h2" id = "TitoloTabelloneAvversario">Tabellone avversario</h2>
+                    <h2 class="h2" id="TitoloTabelloneAvversario">Tabellone avversario</h2>
                     <table
                         class="table table-responsive table-hover table-bordered border-danger text-center tabellone crosshair"
                         id="tabelloneG2" style="z-index: 1;">
@@ -685,7 +685,28 @@
             // Manda la richiesta al server, che la elaborerà
             // socket.emit("spara", coordinate);
             console.log("spara a " + coordinate);
-            socket.emit("controlloSparo", coordinate);
+            socket.emit("controlloSparo", { posizione: coordinate, giocatore: sessionStorage.getItem("username") || "" });
+        }
+
+        socket.on("risultatoColpo", function (data) {
+            const { esito, posizione } = data;
+            if (esito) {
+                alert("Colpo a segno!");
+                aggiornaUI(posizione, true); // Funzione per aggiornare la cella come colpita
+            } else {
+                alert("Colpo mancato.");
+                aggiornaUI(posizione, false); // Funzione per aggiornare la cella come vuota
+            }
+        });
+
+        function aggiornaUI(pos, esito) {
+            const btnCasella = document.getElementById(`c${pos[0]}-${pos[1]}-g2`).firstChild;
+            btnCasella.setAttribute("disabled", "true"); // Disabilita la casella a cui ho appena sparato
+            if (esito) { // Colpo a segno
+                btnCasella.className = btnCasella.className.replace("btn-tertiary", "btn-danger");
+            } else { // Colpo a vuoto
+                btnCasella.className = btnCasella.className.replace("btn-tertiary", "btn-primary");
+            }
         }
     </script>
 
